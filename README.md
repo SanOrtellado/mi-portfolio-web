@@ -204,7 +204,6 @@ Edita `certificaciones.html` y agrega siguiendo esta estructura:
 
 ### Antes de Publicar
 - [ ] Revisa todos los links (GitHub, certificaciones, redes)
-- [ ] Agrega tu foto real con Mailo 🐱
 - [ ] Actualiza las descripciones de proyectos
 - [ ] Verifica que todos los proyectos de GitHub sean públicos
 - [ ] Prueba en diferentes navegadores
