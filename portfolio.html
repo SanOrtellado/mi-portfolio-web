@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sandra Ortellado | Portfolio Profesional</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+    
+    :root {
+      --color-mint: #B4E197;
+      --color-lavender: #A5B4FC;
+      --color-mustard: #FCD34D;
+      --color-gold: #D4A574;
+      --color-purple: #A855F7;
+      --color-turquoise: #22D3EE;
+      --color-dark: #1e293b;
+      --color-darker: #0f172a;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body { 
+      background: linear-gradient(135deg, var(--color-darker) 0%, var(--color-dark) 50%, #334155 100%);
+      background-attachment: fixed;
+      color: white; 
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+      overflow-x: hidden;
+    }
+    
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(circle at 20% 50%, rgba(180, 225, 151, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(34, 211, 238, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    .content-wrapper {
+      position: relative;
+      z-index: 1;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    .fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .float {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .delay-1 { animation-delay: 0.1s; opacity: 0; }
+    .delay-2 { animation-delay: 0.2s; opacity: 0; }
+    .delay-3 { animation-delay: 0.3s; opacity: 0; }
+    .delay-4 { animation-delay: 0.4s; opacity: 0; }
+    
+    header {
+      background: linear-gradient(90deg, var(--color-purple) 0%, var(--color-turquoise) 100%);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    nav a {
+      position: relative;
+      transition: all 0.3s;
+      padding: 0.5rem 0;
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--color-mustard);
+      transition: width 0.3s;
+    }
+    
+    nav a:hover::after {
+      width: 100%;
+    }
+    
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .glass-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.6s;
+    }
+    
+    .glass-card:hover::before {
+      left: 100%;
+    }
+    
+    .glass-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      border-color: var(--color-turquoise);
+    }
+    
+    .hero-title {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--color-mint) 0%, var(--color-turquoise) 50%, var(--color-lavender) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.95);
+    }
+    
+    .profile-img-container {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-purple), var(--color-turquoise));
+      padding: 6px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      animation: pulse 3s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    .profile-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, var(--color-purple), var(--color-turquoise));
+      color: white;
+      font-weight: 600;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      transition: all 0.3s;
+      box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(168, 85, 247, 0.6);
+    }
+    
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      font-weight: 600;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.3);
+      border-color: var(--color-mint);
+      transform: translateY(-3px);
+    }
+    
+    .section-header {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-header::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-mustard), var(--color-turquoise));
+      border-radius: 2px;
+    }
+    
+    .project-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid transparent;
+      transition: all 0.3s;
+    }
+    
+    .project-card:hover {
+      border-color: var(--color-turquoise);
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .skill-item {
+      background: rgba(180, 225, 151, 0.2);
+      border: 1px solid rgba(180, 225, 151, 0.4);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      transition: all 0.3s;
+    }
+    
+    .skill-item:hover {
+      background: rgba(180, 225, 151, 0.3);
+      transform: scale(1.05);
+    }
+    
+    .social-link {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      transition: all 0.3s;
+      text-decoration: none;
+      color: white;
+    }
+    
+    .social-link:hover {
+      background: var(--color-turquoise);
+      transform: translateY(-5px);
+    }
+    
+    footer {
+      background: var(--color-darker);
+      padding: 2rem 0;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="content-wrapper">
+    <!-- Header -->
+    <header class="w-full py-6">
+      <nav class="max-w-6xl mx-auto flex justify-between items-center px-6">
+        <h1 class="text-2xl font-bold">Sandra Ortellado</h1>
+        <ul class="flex gap-8">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#sobre-mi">Sobre Mí</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="certificaciones.html">Certificaciones</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="py-20 px-6">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+        <div class="flex-1 text-center md:text-left">
+          <h2 class="hero-title fade-in-up">
+            ¡Hola! Soy Sandra 
+          
+          </h2>
+          <p class="hero-subtitle mb-6 fade-in-up delay-1">
+            Analista de Datos | Lic. en Data Science | Growth Marketing & Research
+          </p>
+          <p class="text-xl text-gray-200 mb-8 fade-in-up delay-2">
+            Transformo datos en decisiones inteligentes con  
+            <span style="color: var(--color-mustard)">Python</span>, 
+            <span style="color: var(--color-lavender)">SQL</span> & 
+            <span style="color: var(--color-turquoise)">Power BI</span>
+          </p>
+          <div class="flex gap-4 justify-center md:justify-start fade-in-up delay-3">
+            <a href="#proyectos" class="btn-primary">
+              <i class="fas fa-folder-open"></i> Ver Proyectos
+            </a>
+            <a href="#contacto" class="btn-secondary">
+              <i class="fas fa-envelope"></i> Contacto
+            </a>
+          </div>
+        </div>
+        <div class="flex-1 flex justify-center float">
+          <div class="profile-img-container">
+            <img src="mailoyyo.jpeg" alt="Sandra con Mailo" class="profile-img">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre Mí -->
+    <section id="sobre-mi" class="py-16 px-6">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="section-header w-full mb-12" style="color: var(--color-mint)">
+          <i class="fas fa-user-circle"></i> Sobre Mí
+        </h2>
+        
+        <div class="glass-card mb-8">
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-2xl font-bold mb-4" style="color: var(--color-turquoise)">
+                📊 En el trabajo
+              </h3>
+              <p class="text-lg text-gray-200 leading-relaxed mb-4">
+            
+                Cuando llego a la oficina,  ya tengo una lista de tareas que parece un maratón de Excel 🧾. 
+              Pero ahí entro en modo <strong style="color: var(--color-mustard)">Flash Analista ⚡</strong>: 
+              cruzo datos, armo dashboards y saco insights antes de que el café se enfríe ☕. 
+             <br><br>
+             Soy <strong style="color: var(--color-mustard)">Analista Sr. de Marketing en Arbell</strong>, 
+            donde convierto montañas de datos en decisiones más inteligentes, rápidas y basadas en hechos 
+             (no en corazonadas 😉).
+              </p>
+              <p class="text-lg text-gray-100 leading-relaxed">
+              </p>
+                Estoy cursando la <strong style="color: var(--color-mustard)">Licenciatura en Ciencias de Datos</strong> en Universidad Siglo 21, 
+                porque nunca paro de aprender. Cada proyecto es una oportunidad para combinar análisis, 
+                tecnología y un toque de creatividad.
+              </p>
+            </div>
+            
+            <div>
+              <h3 class="text-2xl font-bold mb-4" style="color: var(--color-purple)">
+                🎸 Cuando no estoy en línea
+              </h3>
+              <p class="text-lg text-gray-200 leading-relaxed mb-4">
+                Me encontrarás con un libro en la mano (soy adicta a las buenas historias 📚),
+                 caminando para despejar la mente, o tocando la guitarra (porque la música es terapia 🎶).
+                 Durante la semana también enseño programación en mi academia 
+                 <a href="https://e-academy.com.ar" target="_blank" style="color: var(--color-turquoise); font-weight: 600;">
+                 E-Academy.com.ar
+                 </a>, mi cablecito a tierra donde comparto todo lo que me apasiona del mundo tech 💻✨.
+                  También hago pilates para mantener el equilibrio entre mente y cuerpo 🧘‍♀️.
+                </p>
+                  <p class="text-lg text-gray-200 leading-relaxed">
+                   Y por supuesto, paso tiempo de calidad con 
+                   <strong style="color: var(--color-mint)">Mailo</strong>,
+                    mi gato, quien es experto en interrumpir videollamadas y hacer code reviews
+                    (aunque solo entiende de siestas 😺).
+      </p>
+          </div>
+        </div>
+
+
+
+    
+        <div class="glass-card mt-12">
+  <h3 class="text-2xl font-bold mb-8 text-center" style="color: var(--color-lavender)">
+    💼 Mi filosofía de trabajo
+  </h3>
+<div class="grid md:grid-cols-3 gap-6">
+
+  <div class="text-center">
+  <img src="proctive.jpeg" alt="Enfoque proactivo" 
+       class="mx-auto mb-3 w-20 h-20 object-contain">
+  <h4 class="font-bold mb-2">Enfoque proactivo</h4>
+  <p class="text-gray-300">
+    Anticipo necesidades y resuelvo problemas antes de que se conviertan en crisis.
+  </p>
+</div>
+
+<div class="text-center">
+  <img src="metrica.jpeg" alt="Resultados medibles" 
+       class="mx-auto mb-3 w-20 h-20 object-contain">
+  <h4 class="font-bold mb-2">Resultados medibles</h4>
+  <p class="text-gray-300">
+    Si no se puede medir, no se puede mejorar. Los datos no mienten.
+  </p>
+</div>
+
+<div class="text-center">
+  <img src="aprendizaje.png" alt="Aprendizaje continuo" 
+       class="mx-auto mb-3 w-20 h-20 object-contain">
+  <h4 class="font-bold mb-2">Aprendizaje continuo</h4>
+  <p class="text-gray-300">
+    La tecnología evoluciona rápido, yo también. Siempre hay algo nuevo por descubrir.
+  </p>
+</div>
+
+
+</div>
+
+</div>
+
+
+    <!-- Proyectos -->
+    <main id="proyectos" class="py-16 px-6">
+      <section class="max-w-6xl mx-auto">
+        <h2 class="section-header w-full" style="color: var(--color-mustard)">
+          <i class="fas fa-folder-open"></i> Proyectos Destacados
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Proyecto 1: Análisis y Segmentación de Clientes -->
+          <div class="glass-card project-card">
+            <div class="text-5xl mb-4" style="color: var(--color-turquoise)">
+              <i class="fas fa-users-cog"></i>
+            </div>
+            <h3 class="text-2xl font-semibold mb-3">Segmentación de Clientes con ML</h3>
+            <p class="mb-4 text-gray-200 leading-relaxed">
+              Análisis de comportamiento y segmentación de clientes en marketing usando técnicas 
+              de Machine Learning y clustering con Python.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="skill-item text-sm">Python</span>
+              <span class="skill-item text-sm">Pandas</span>
+              <span class="skill-item text-sm">Scikit-learn</span>
+              <span class="skill-item text-sm">K-Means</span>
+            </div>
+            <a href="https://github.com/SanOrtellado/Proyecto-An-lisis-y-Segmentaci-n-de-Clientes-en-Marketing-con-Python" 
+               target="_blank"
+               class="inline-flex items-center gap-2 font-semibold hover:underline transition"
+               style="color: var(--color-turquoise)">
+              <i class="fab fa-github"></i> Ver en GitHub <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <!-- Proyecto 2: Google Analytics -->
+          <div class="glass-card project-card">
+            <div class="text-5xl mb-4" style="color: var(--color-lavender)">
+              <i class="fab fa-google"></i>
+            </div>
+            <h3 class="text-2xl font-semibold mb-3">Análisis con Google Analytics</h3>
+            <p class="mb-4 text-gray-200 leading-relaxed">
+              Proyecto completo de análisis de tráfico web y comportamiento de usuarios 
+              utilizando Google Analytics 4 y técnicas avanzadas de tracking.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="skill-item text-sm">Google Analytics 4</span>
+              <span class="skill-item text-sm">GTM</span>
+              <span class="skill-item text-sm">Data Studio</span>
+            </div>
+            <a href="https://github.com/SanOrtellado/Alura_GoogleAnalytics" 
+               target="_blank"
+               class="inline-flex items-center gap-2 font-semibold hover:underline transition"
+               style="color: var(--color-lavender)">
+              <i class="fab fa-github"></i> Ver en GitHub <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <!-- Proyecto 3: Informes de Ventas -->
+          <div class="glass-card project-card">
+            <div class="text-5xl mb-4" style="color: var(--color-mint)">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="text-2xl font-semibold mb-3">Informes Automatizados de Ventas</h3>
+            <p class="mb-4 text-gray-200 leading-relaxed">
+              Sistema de generación automática de reportes de ventas con análisis de KPIs 
+              y visualizaciones interactivas.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="skill-item text-sm">Python</span>
+              <span class="skill-item text-sm">Power BI</span>
+              <span class="skill-item text-sm">SQL</span>
+            </div>
+            <a href="https://github.com/SanOrtellado/Informes_Ventas" 
+               target="_blank"
+               class="inline-flex items-center gap-2 font-semibold hover:underline transition"
+               style="color: var(--color-mint)">
+              <i class="fab fa-github"></i> Ver en GitHub <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <!-- Proyecto 4: Datos Precios Autos -->
+          <div class="glass-card project-card">
+            <div class="text-5xl mb-4" style="color: var(--color-gold)">
+              <i class="fas fa-car"></i>
+            </div>
+            <h3 class="text-2xl font-semibold mb-3">Análisis de Precios de Autos</h3>
+            <p class="mb-4 text-gray-200 leading-relaxed">
+              Web scraping y análisis exploratorio de datos de precios de automóviles 
+              para identificar patrones y tendencias del mercado.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="skill-item text-sm">Python</span>
+              <span class="skill-item text-sm">BeautifulSoup</span>
+              <span class="skill-item text-sm">Pandas</span>
+            </div>
+            <a href="https://github.com/SanOrtellado/Datos_Precios_Autos" 
+               target="_blank"
+               class="inline-flex items-center gap-2 font-semibold hover:underline transition"
+               style="color: var(--color-gold)">
+              <i class="fab fa-github"></i> Ver en GitHub <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <!-- Proyecto 5: Análisis Ventas Adidas -->
+          <div class="glass-card project-card">
+            <div class="text-5xl mb-4" style="color: var(--color-purple)">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <h3 class="text-2xl font-semibold mb-3">Dashboard Ventas Adidas</h3>
+            <p class="mb-4 text-gray-200 leading-relaxed">
+              Dashboard interactivo de análisis de ventas con visualización de tendencias, 
+              comparativas regionales y análisis de productos más vendidos.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="skill-item text-sm">Power BI</span>
+              <span class="skill-item text-sm">DAX</span>
+              <span class="skill-item text-sm">Excel</span>
+            </div>
+            <a href="https://github.com/SanOrtellado/Analisis_ventas_Adidas" 
+               target="_blank"
+               class="inline-flex items-center gap-2 font-semibold hover:underline transition"
+               style="color: var(--color-purple)">
+              <i class="fab fa-github"></i> Ver en GitHub <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <!-- Link a más proyectos -->
+          <div class="glass-card flex items-center justify-center bg-white/5 project-card">
+            <div class="text-center">
+              <div class="text-5xl mb-4">💻</div>
+              <h3 class="text-xl font-bold mb-3">¿Quieres ver más?</h3>
+              <a href="https://github.com/SanOrtellado?tab=repositories" 
+                 target="_blank" 
+                 class="btn-secondary">
+                <i class="fab fa-github"></i>
+                Todos mis proyectos en GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Habilidades -->
+    <section id="habilidades" class="py-16 px-6">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="section-header w-full text-center mb-12" style="color: var(--color-lavender)">
+          <i class="fas fa-tools"></i> Habilidades Técnicas
+        </h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="glass-card">
+            <h3 class="text-2xl font-bold mb-6 flex items-center gap-3" style="color: var(--color-turquoise)">
+              <i class="fas fa-chart-line text-3xl"></i>
+              Análisis de Datos
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="skill-item"><i class="fas fa-check"></i> Power BI</span>
+              <span class="skill-item"><i class="fas fa-check"></i> SQL</span>
+              <span class="skill-item"><i class="fas fa-check"></i> Python</span>
+              <span class="skill-item"><i class="fas fa-check"></i> Excel Avanzado</span>
+              <span class="skill-item"><i class="fas fa-check"></i> Machine Learning</span>
+              <span class="skill-item"><i class="fas fa-check"></i> Data Governance</span>
+              <span class="skill-item"><i class="fas fa-check"></i> AWS</span>
+            </div>
+          </div>
+          
+          <div class="glass-card">
+            <h3 class="text-2xl font-bold mb-6 flex items-center gap-3" style="color: var(--color-mustard)">
+              <i class="fas fa-bullhorn text-3xl"></i>
+              Marketing Digital
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="skill-item"><i class="fas fa-check"></i> Google Ads</span>
+              <span class="skill-item"><i class="fas fa-check"></i> Meta Ads</span>
+              <span class="skill-item"><i class="fas fa-check"></i> Google Analytics 4</span>
+              <span class="skill-item"><i class="fas fa-check"></i> SEO</span>
+              <span class="skill-item"><i class="fas fa-check"></i> Growth Marketing</span>
+              <span class="skill-item"><i class="fas fa-check"></i> Email Marketing</span>
+            </div>
+          </div>
+          
+          <div class="glass-card">
+            <h3 class="text-2xl font-bold mb-6 flex items-center gap-3" style="color: var(--color-purple)">
+              <i class="fas fa-code text-3xl"></i>
+              Desarrollo Web
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="skill-item"><i class="fas fa-check"></i> HTML5</span>
+              <span class="skill-item"><i class="fas fa-check"></i> CSS3</span>
+              <span class="skill-item"><i class="fas fa-check"></i> JavaScript</span>
+              <span class="skill-item"><i class="fas fa-check"></i> React.js</span>
+              <span class="skill-item"><i class="fas fa-check"></i> Tailwind CSS</span>
+            </div>
+          </div>
+          
+          <div class="glass-card">
+            <h3 class="text-2xl font-bold mb-6 flex items-center gap-3" style="color: var(--color-mint)">
+              <i class="fas fa-cogs text-3xl"></i>
+              Herramientas
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="skill-item"><i class="fas fa-check"></i> Git & GitHub</span>
+              <span class="skill-item"><i class="fas fa-check"></i> Jira</span>
+              <span class="skill-item"><i class="fas fa-check"></i> SAP SD</span>
+              <span class="skill-item"><i class="fas fa-check"></i> VS Code</span>
+              <span class="skill-item"><i class="fas fa-check"></i> ChatGPT/IA</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="glass-card mt-8">
+          <h3 class="text-2xl font-bold mb-6 text-center" style="color: var(--color-gold)">
+            📚 Formación y Aprendizaje Continuo
+          </h3>
+          <div class="grid md:grid-cols-3 gap-6 text-center">
+            <div>
+              <div class="text-5xl font-bold mb-2" style="color: var(--color-turquoise)">400+</div>
+              <p class="text-gray-200">Horas de cursos certificados</p>
+            </div>
+            <div>
+              <div class="text-5xl font-bold mb-2" style="color: var(--color-mint)">11+</div>
+              <p class="text-gray-200">Certificaciones profesionales</p>
+            </div>
+            <div>
+              <div class="text-5xl font-bold mb-2" style="color: var(--color-purple)">∞</div>
+              <p class="text-gray-200">Ganas de seguir aprendiendo</p>
+            </div>
+          </div>
+          <div class="text-center mt-6">
+            <a href="certificaciones.html" class="btn-primary">
+              <i class="fas fa-certificate"></i> Ver todas mis certificaciones
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-16 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="section-header w-full mb-8" style="color: var(--color-mustard)">
+          <i class="fas fa-envelope"></i> ¿Trabajamos Juntos?
+        </h2>
+        
+        <div class="glass-card">
+          <p class="text-xl text-white/90 mb-8">
+            Estoy disponible para proyectos freelance, colaboraciones y oportunidades full-time. 
+            ¡Conectemos y hagamos que los datos cuenten historias! 📊✨
+          </p>
+          
+          <div class="flex flex-wrap gap-6 justify-center mb-8">
+            <a href="mailto:ortesancode@gmail.com" class="social-link">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://ar.linkedin.com/in/sandra-ortellado" target="_blank" class="social-link">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/SanOrtellado" target="_blank" class="social-link">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://wa.me/5491156032101" target="_blank" class="social-link">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-6 text-left">
+            <div class="bg-white/10 p-6 rounded-xl">
+              <h3 class="text-xl font-bold mb-4">📧 Email</h3>
+              <p class="text-white/90">ortesancode@gmail.com</p>
+            </div>
+            <div class="bg-white/10 p-6 rounded-xl">
+              <h3 class="text-xl font-bold mb-4">📱 WhatsApp</h3>
+              <p class="text-white/90">+54 9 11 5603-2101</p>
+            </div>
+            <div class="bg-white/10 p-6 rounded-xl">
+              <h3 class="text-xl font-bold mb-4">📍 Ubicación</h3>
+              <p class="text-white/90">San Fernando, Buenos Aires, Argentina</p>
+            </div>
+            <div class="bg-white/10 p-6 rounded-xl">
+              <h3 class="text-xl font-bold mb-4">💼 LinkedIn</h3>
+              <a href="https://ar.linkedin.com/in/sandra-ortellado" target="_blank" class="text-white/90 hover:underline" style="color: var(--color-turquoise)">
+                /sandra-ortellado
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <p class="text-white/80 text-lg mb-4">
+          Diseñado y desarrollado con ❤️ (y muchas tazas de café ☕) por Sandra Ortellado y Mailo😺
+        </p>
+        <p class="text-white/60">
+          &copy; 2025 Todos los derechos reservados | Made with data & passion
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Intersection Observer para animaciones
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.glass-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'all 0.8s ease-out';
+      observer.observe(el);
+    });
+
+    // Active nav link
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= (sectionTop - 200)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('text-white');
+        if (link.getAttribute('href').slice(1) === current) {
+          link.classList.add('text-white');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
