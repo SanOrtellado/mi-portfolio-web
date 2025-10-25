@@ -105,11 +105,11 @@ Por:
 ```
 
 ### Modificar Información Personal
-Busca y actualiza en `portfolio.html`:
-- Email: `ortesancode@gmail.com`
-- LinkedIn: `/sandra-ortellado`
-- GitHub: `SanOrtellado`
-- WhatsApp: `+54 9 11 5603-2101`
+Busca y actualiza en `
+- Email: 
+- LinkedIn: 
+- GitHub: 
+- WhatsApp:
 
 ### Agregar Nuevos Proyectos
 1. Crea un nuevo repositorio en GitHub
@@ -192,11 +192,11 @@ Edita `certificaciones.html` y agrega siguiendo esta estructura:
 ## 📞 Contacto
 
 **Sandra Ortellado**
-- 📧 Email: ortesancode@gmail.com
-- 💼 LinkedIn: [sandra-ortellado](https://ar.linkedin.com/in/sandra-ortellado)
-- 💻 GitHub: [SanOrtellado](https://github.com/SanOrtellado)
-- 📱 WhatsApp: +54 9 11 5603-2101
-- 📍 Ubicación: Tigre, Buenos Aires, Argentina
+- 📧 Email: 
+- 💼 LinkedIn: 
+- 💻 GitHub:
+- 📱 WhatsApp:
+- 📍 Ubicación: 
 
 ---
 
