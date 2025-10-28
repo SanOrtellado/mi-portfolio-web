@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Sandra Ortellado</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+    
+    :root {
+      --color-mint: #B4E197;
+      --color-lavender: #A5B4FC;
+      --color-mustard: #FCD34D;
+      --color-gold: #D4A574;
+      --color-purple: #A855F7;
+      --color-turquoise: #22D3EE;
+      --color-dark: #1e293b;
+      --color-darker: #0f172a;
+    }
+    
+    body { 
+      background: linear-gradient(135deg, var(--color-darker) 0%, var(--color-dark) 50%, #334155 100%);
+      background-attachment: fixed;
+      color: white; 
+      font-family: 'Poppins', sans-serif; 
+    }
+    
+    header {
+      background: linear-gradient(90deg, var(--color-purple) 0%, var(--color-turquoise) 100%);
+    }
+
+    .nav-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .nav-button:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+    }
+
+    .blog-card {
+      background: rgba(255,255,255,0.08);
+      border-radius: 1rem;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .blog-card:hover {
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-5px);
+      border-color: var(--color-turquoise);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    }
+
+    .blog-category {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .coming-soon {
+      background: rgba(255,255,255,0.08);
+      border: 2px dashed rgba(255,255,255,0.3);
+      border-radius: 1rem;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.25rem !important;
+      }
+
+      header nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      header ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem !important;
+      }
+
+      .nav-button {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.875rem;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+  <header class="w-full py-4 md:py-6 shadow-lg">
+    <nav class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center px-4 md:px-6 gap-3">
+      <h1 class="text-xl md:text-2xl font-bold text-white">Sandra Ortellado</h1>
+      <ul class="flex flex-wrap gap-2 md:gap-4 justify-center">
+        <li><a href="portfolio.html" class="nav-button"><i class="fas fa-home"></i> Portfolio</a></li>
+        <li><a href="certificaciones.html" class="nav-button"><i class="fas fa-certificate"></i> Certificaciones</a></li>
+        <li><a href="cv-sandra-ortellado.pdf" download class="nav-button bg-gradient-to-r from-purple-600 to-cyan-500"><i class="fas fa-download"></i> Descargar CV</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="max-w-6xl w-full px-4 md:px-6 mt-8 md:mt-12 mb-8 md:mb-12 mx-auto">
+    <div class="text-center mb-8 md:mb-12">
+      <h2 class="text-3xl md:text-5xl font-bold mb-3 md:mb-4" style="color: var(--color-mint)">
+        <i class="fas fa-blog"></i> Blog
+      </h2>
+      <p class="text-base md:text-xl text-gray-300 px-4">
+        Insights sobre Data Science, Marketing Digital y Tecnología
+      </p>
+    </div>
+
+    <!-- Artículos del blog -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8">
+      
+      <!-- Artículo 1: Power BI -->
+      <article class="blog-card">
+        <div class="h-48 bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center text-6xl">
+          <i class="fas fa-chart-bar"></i>
+        </div>
+        <div class="p-4 md:p-6">
+          <div class="mb-3">
+            <span class="blog-category" style="background: var(--color-mustard); color: var(--color-darker);">
+              Data Analytics
+            </span>
+            <span class="blog-category" style="background: var(--color-turquoise); color: var(--color-darker);">
+              Power BI
+            </span>
+          </div>
+          <h3 class="text-lg md:text-xl font-bold mb-2">Cómo Power BI transformó nuestra toma de decisiones</h3>
+          <p class="text-sm md:text-base text-gray-300 mb-4">
+            De reportes manuales que tomaban días a dashboards en tiempo real. La historia completa 
+            de cómo implementamos Business Intelligence y redujimos 85% el tiempo de reporteo.
+          </p>
+          <div class="flex justify-between items-center text-xs md:text-sm text-gray-400 mb-4">
+            <span><i class="fas fa-calendar"></i> 15 Mar 2025</span>
+            <span><i class="fas fa-clock"></i> 8 min lectura</span>
+          </div>
+          <a href="articulopowerbi.html" class="bg-gradient-to-r from-yellow-600 to-orange-500 px-4 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition inline-block w-full text-center">
+            Leer artículo <i class="fas fa-arrow-right ml-1"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Artículo 2: Marketing Digital -->
+      <article class="blog-card">
+        <div class="h-48 bg-gradient-to-br from-pink-600 to-purple-600 flex items-center justify-center text-6xl">
+          <i class="fas fa-bullhorn"></i>
+        </div>
+        <div class="p-4 md:p-6">
+          <div class="mb-3">
+            <span class="blog-category" style="background: #E91E63; color: white;">
+              Marketing Digital
+            </span>
+            <span class="blog-category" style="background: var(--color-purple); color: white;">
+              ROI
+            </span>
+          </div>
+          <h3 class="text-lg md:text-xl font-bold mb-2">5 Estrategias de Marketing Digital que triplicaron nuestro ROI</h3>
+          <p class="text-sm md:text-base text-gray-300 mb-4">
+            De un ROI de 1.2x a 4.2x en 12 meses. Estrategias concretas de Google Ads, inbound marketing, 
+            y optimización de conversión con resultados medibles.
+          </p>
+          <div class="flex justify-between items-center text-xs md:text-sm text-gray-400 mb-4">
+            <span><i class="fas fa-calendar"></i> 10 Mar 2025</span>
+            <span><i class="fas fa-clock"></i> 10 min lectura</span>
+          </div>
+          <a href="articulomarketing.html" class="bg-gradient-to-r from-pink-600 to-purple-600 px-4 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition inline-block w-full text-center">
+            Leer artículo <i class="fas fa-arrow-right ml-1"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Artículo 3: Machine Learning -->
+      <article class="blog-card">
+        <div class="h-48 bg-gradient-to-br from-cyan-600 to-purple-600 flex items-center justify-center text-6xl">
+          <i class="fas fa-brain"></i>
+        </div>
+        <div class="p-4 md:p-6">
+          <div class="mb-3">
+            <span class="blog-category" style="background: var(--color-purple); color: white;">
+              Machine Learning
+            </span>
+            <span class="blog-category" style="background: var(--color-turquoise); color: var(--color-darker);">
+              Python
+            </span>
+          </div>
+          <h3 class="text-lg md:text-xl font-bold mb-2">Machine Learning para predecir el comportamiento del cliente</h3>
+          <p class="text-sm md:text-base text-gray-300 mb-4">
+            Guía práctica: cómo implementamos un modelo de ML que redujo el churn en 35% y aumentó 
+            el valor de vida del cliente en $127K. Incluye código y paso a paso.
+          </p>
+          <div class="flex justify-between items-center text-xs md:text-sm text-gray-400 mb-4">
+            <span><i class="fas fa-calendar"></i> 5 Mar 2025</span>
+            <span><i class="fas fa-clock"></i> 12 min lectura</span>
+          </div>
+          <a href="articuloML.HTML" class="bg-gradient-to-r from-cyan-600 to-purple-600 px-4 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition inline-block w-full text-center">
+            Leer artículo <i class="fas fa-arrow-right ml-1"></i>
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Categorías de interés -->
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+      <div class="blog-card p-6 text-center">
+        <div class="text-4xl mb-3">📊</div>
+        <h4 class="text-lg md:text-xl font-bold mb-2" style="color: var(--color-turquoise)">
+          Data Science
+        </h4>
+        <p class="text-sm text-gray-300">
+          Análisis de datos, visualizaciones y machine learning
+        </p>
+      </div>
+
+      <div class="blog-card p-6 text-center">
+        <div class="text-4xl mb-3">📱</div>
+        <h4 class="text-lg md:text-xl font-bold mb-2" style="color: var(--color-mustard)">
+          Marketing Digital
+        </h4>
+        <p class="text-sm text-gray-300">
+          Estrategias, métricas y tendencias del marketing online
+        </p>
+      </div>
+
+      <div class="blog-card p-6 text-center">
+        <div class="text-4xl mb-3">💻</div>
+        <h4 class="text-lg md:text-xl font-bold mb-2" style="color: var(--color-purple)">
+          Desarrollo Web
+        </h4>
+        <p class="text-sm text-gray-300">
+          Tecnologías, frameworks y mejores prácticas
+        </p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="mt-auto py-4 md:py-6 text-center border-t border-white/20 w-full">
+    <p class="text-sm md:text-base text-gray-300">&copy; 2025 Sandra Ortellado | Analista de Datos & Marketing Digital</p>
+    <div class="flex gap-4 justify-center mt-3">
+      <a href="https://linkedin.com/in/tu-perfil" target="_blank" class="text-gray-400 hover:text-white transition">
+        <i class="fab fa-linkedin text-xl"></i>
+      </a>
+      <a href="https://github.com/tu-usuario" target="_blank" class="text-gray-400 hover:text-white transition">
+        <i class="fab fa-github text-xl"></i>
+      </a>
+      <a href="mailto:ortesancode@gmail.com" class="text-gray-400 hover:text-white transition">
+        <i class="fas fa-envelope text-xl"></i>
+      </a>
+    </div>
+  </footer>
+</body>
+</html>

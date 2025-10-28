@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyectos Destacados | Sandra Ortellado</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+    
+    :root {
+      --color-mint: #B4E197;
+      --color-lavender: #A5B4FC;
+      --color-mustard: #FCD34D;
+      --color-gold: #D4A574;
+      --color-purple: #A855F7;
+      --color-turquoise: #22D3EE;
+      --color-dark: #1e293b;
+      --color-darker: #0f172a;
+    }
+    
+    body { 
+      background: linear-gradient(135deg, var(--color-darker) 0%, var(--color-dark) 50%, #334155 100%);
+      background-attachment: fixed;
+      color: white; 
+      font-family: 'Poppins', sans-serif; 
+    }
+    
+    header {
+      background: linear-gradient(90deg, var(--color-purple) 0%, var(--color-turquoise) 100%);
+    }
+
+    .nav-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .nav-button:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+    }
+
+    .project-card {
+      background: rgba(255,255,255,0.08);
+      border-radius: 1rem;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.1);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-5px);
+      border-color: var(--color-turquoise);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    }
+
+    .project-header {
+      height: 200px;
+      background: linear-gradient(135deg, var(--color-purple) 0%, var(--color-turquoise) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-header::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+      animation: shine 3s infinite;
+    }
+
+    @keyframes shine {
+      0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    }
+
+    .tech-tag {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin: 0.25rem;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .metric-box {
+      background: rgba(255,255,255,0.05);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    @media (max-width: 768px) {
+      .project-header {
+        height: 150px;
+        font-size: 3rem;
+      }
+
+      header h1 {
+        font-size: 1.25rem !important;
+      }
+
+      header nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      header ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem !important;
+      }
+
+      .nav-button {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.875rem;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+  <header class="w-full py-4 md:py-6 shadow-lg">
+    <nav class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center px-4 md:px-6 gap-3">
+      <h1 class="text-xl md:text-2xl font-bold text-white">Sandra Ortellado</h1>
+      <ul class="flex flex-wrap gap-2 md:gap-4 justify-center">
+        <li><a href="portfolio.html" class="nav-button"><i class="fas fa-home"></i> Portfolio</a></li>
+        <li><a href="certificaciones.html" class="nav-button"><i class="fas fa-certificate"></i> Certificaciones</a></li>
+        <li><a href="blog.html" class="nav-button"><i class="fas fa-blog"></i> Blog</a></li>
+        <li><a href="CV - Sandra Ortellado _ Data Analyst & Marketing Digital.pdf" download class="nav-button bg-gradient-to-r from-purple-600 to-cyan-500"><i class="fas fa-download"></i> CV</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="max-w-6xl w-full px-4 md:px-6 mt-8 md:mt-12 mb-8 md:mb-12 mx-auto">
+    
+    <!-- Hero Section -->
+    <div class="text-center mb-8 md:mb-12">
+      <h2 class="text-3xl md:text-5xl font-bold mb-3 md:mb-4" style="color: var(--color-mint)">
+        <i class="fas fa-rocket"></i> Proyectos Destacados
+      </h2>
+      <p class="text-base md:text-xl text-gray-300 px-4 max-w-3xl mx-auto">
+        Transformando datos en decisiones estratégicas y creando experiencias digitales que generan resultados medibles
+      </p>
+    </div>
+
+    <!-- Estadísticas generales -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 md:mb-12">
+      <div class="metric-box">
+        <div class="text-3xl md:text-4xl font-bold mb-2" style="color: var(--color-turquoise)">6+</div>
+        <p class="text-xs md:text-sm text-gray-300">Proyectos Completados</p>
+      </div>
+      <div class="metric-box">
+        <div class="text-3xl md:text-4xl font-bold mb-2" style="color: var(--color-mustard)">150%</div>
+        <p class="text-xs md:text-sm text-gray-300">ROI Promedio</p>
+      </div>
+      <div class="metric-box">
+        <div class="text-3xl md:text-4xl font-bold mb-2" style="color: var(--color-purple)">40%</div>
+        <p class="text-xs md:text-sm text-gray-300">Reducción Costos</p>
+      </div>
+      <div class="metric-box">
+        <div class="text-3xl md:text-4xl font-bold mb-2" style="color: var(--color-mint)">98%</div>
+        <p class="text-xs md:text-sm text-gray-300">Satisfacción Cliente</p>
+      </div>
+    </div>
+
+    <!-- Proyecto 1: Dashboard Power BI -->
+    <div class="project-card mb-6">
+      <div class="project-header" style="background: linear-gradient(135deg, #F2C811 0%, #E67E22 100%);">
+        <i class="fas fa-chart-bar"></i>
+      </div>
+      <div class="p-4 md:p-6 flex-1 flex flex-col">
+        <div class="flex-1">
+          <div class="flex flex-wrap items-center gap-2 mb-3">
+            <span class="tech-tag" style="background: var(--color-mustard); color: var(--color-darker);">Power BI</span>
+            <span class="tech-tag" style="background: var(--color-turquoise); color: var(--color-darker);">SQL</span>
+            <span class="tech-tag" style="background: var(--color-purple); color: white;">DAX</span>
+            <span class="tech-tag" style="background: var(--color-mint); color: var(--color-darker);">Excel</span>
+          </div>
+          
+          <h3 class="text-xl md:text-2xl font-bold mb-3" style="color: var(--color-mustard)">
+            Dashboard Ejecutivo de Ventas y KPIs (en construcción)
+          </h3>
+          
+          <p class="text-sm md:text-base text-gray-300 mb-4 leading-relaxed">
+            Desarrollo de dashboard interactivo en Power BI para análisis en tiempo real de métricas comerciales, 
+            integrando datos de múltiples fuentes (CRM, ERP, Excel). Implementación de medidas DAX complejas para 
+            cálculos de variación YoY, forecasting y análisis de tendencias.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
+            <div class="bg-white/5 p-3 rounded-lg text-center">
+              <div class="text-2xl font-bold" style="color: var(--color-turquoise)">85%</div>
+              <p class="text-xs text-gray-400">Tiempo ahorrado en reportes</p>
+            </div>
+            <div class="bg-white/5 p-3 rounded-lg text-center">
+              <div class="text-2xl font-bold" style="color: var(--color-mint)">15</div>
+              <p class="text-xs text-gray-400">Visualizaciones interactivas</p>
+            </div>
+            <div class="bg-white/5 p-3 rounded-lg text-center">
+              <div class="text-2xl font-bold" style="color: var(--color-mustard)">5</div>
+              <p class="text-xs text-gray-400">Fuentes de datos integradas</p>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <h4 class="font-semibold mb-2 text-sm" style="color: var(--color-turquoise)">Características principales:</h4>
+            <ul class="text-xs md:text-sm text-gray-300 space-y-1">
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Análisis de ventas por región, producto y vendedor</li>
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Forecasting predictivo con Machine Learning</li>
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Alertas automáticas para KPIs fuera de rango</li>
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Comparativas YoY y análisis de tendencias</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex gap-2 flex-wrap mt-4">
+          <button class="bg-gradient-to-r from-yellow-600 to-orange-500 px-4 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition flex-1 md:flex-initial">
+            <i class="fas fa-eye"></i> Ver Demo
+          </button>
+          <button class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg text-sm font-semibold transition flex-1 md:flex-initial">
+            <i class="fas fa-file-pdf"></i> Caso de Estudio
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Proyecto 2: Estrategia de Marketing Digital -->
+    <div class="project-card mb-6">
+      <div class="project-header" style="background: linear-gradient(135deg, #E91E63 0%, #9C27B0 100%);">
+        <i class="fas fa-bullhorn"></i>
+      </div>
+      <div class="p-4 md:p-6 flex-1 flex flex-col">
+        <div class="flex-1">
+          <div class="flex flex-wrap items-center gap-2 mb-3">
+            <span class="tech-tag" style="background: #E91E63; color: white;">Google Ads</span>
+            <span class="tech-tag" style="background: #9C27B0; color: white;">SEO/SEM</span>
+            <span class="tech-tag" style="background: var(--color-turquoise); color: var(--color-darker);">Analytics</span>
+            <span class="tech-tag" style="background: var(--color-mustard); color: var(--color-darker);">Inbound</span>
+          </div>
+          
+          <h3 class="text-xl md:text-2xl font-bold mb-3" style="color: #E91E63;">
+            Campaña Integral de Marketing Digital para E-commerce (en construcción)
+          </h3>
+          
+          <p class="text-sm md:text-base text-gray-300 mb-4 leading-relaxed">
+            Diseño e implementación de estrategia multicanal combinando Google Ads, SEO, email marketing e inbound marketing. 
+            Desarrollo de embudos de conversión optimizados con A/B testing continuo y análisis de métricas en tiempo real.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
+            <div class="bg-white/5 p-3 rounded-lg text-center">
+              <div class="text-2xl font-bold" style="color: var(--color-mint)">245%</div>
+              <p class="text-xs text-gray-400">Aumento en conversiones</p>
+            </div>
+            <div class="bg-white/5 p-3 rounded-lg text-center">
+              <div class="text-2xl font-bold" style="color: #E91E63;">68%</div>
+              <p class="text-xs text-gray-400">Reducción CPA</p>
+            </div>
+            <div class="bg-white/5 p-3 rounded-lg text-center">
+              <div class="text-2xl font-bold" style="color: var(--color-turquoise)">4.2x</div>
+              <p class="text-xs text-gray-400">ROI obtenido</p>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <h4 class="font-semibold mb-2 text-sm" style="color: #E91E63;">Resultados destacados:</h4>
+            <ul class="text-xs md:text-sm text-gray-300 space-y-1">
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Tráfico orgánico incrementado en 180% en 6 meses</li>
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Tasa de conversión mejorada de 1.2% a 4.1%</li>
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Base de leads calificados: +15,000 contactos</li>
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Optimización de campañas con machine learning</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex gap-2 flex-wrap mt-4">
+          <button class="bg-gradient-to-r from-pink-600 to-purple-600 px-4 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition flex-1 md:flex-initial">
+            <i class="fas fa-chart-line"></i> Ver Resultados
+          </button>
+          <button class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg text-sm font-semibold transition flex-1 md:flex-initial">
+            <i class="fas fa-file-alt"></i> Estrategia Completa
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Proyecto 3: Sistema de Predicción ML -->
+    <div class="project-card mb-6">
+      <div class="project-header" style="background: linear-gradient(135deg, #00BCD4 0%, #673AB7 100%);">
+        <i class="fas fa-brain"></i>
+      </div>
+      <div class="p-4 md:p-6 flex-1 flex flex-col">
+        <div class="flex-1">
+          <div class="flex flex-wrap items-center gap-2 mb-3">
+            <span class="tech-tag" style="background: #00BCD4; color: var(--color-darker);">Python</span>
+            <span class="tech-tag" style="background: #673AB7; color: white;">Machine Learning</span>
+            <span class="tech-tag" style="background: var(--color-mint); color: var(--color-darker);">Scikit-learn</span>
+            <span class="tech-tag" style="background: var(--color-mustard); color: var(--color-darker);">AWS</span>
+          </div>
+          
+          <h3 class="text-xl md:text-2xl font-bold mb-3" style="color: #00BCD4;">
+            Sistema Predictivo de Churn y Segmentación de Clientes (en construcción)
+          </h3>
+          
+          <p class="text-sm md:text-base text-gray-300 mb-4 leading-relaxed">
+            Desarrollo de modelo de Machine Learning para predecir abandono de clientes y segmentación automática 
+            usando algoritmos de clasificación y clustering. Implementación en AWS con actualización automática de datos.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
+            <div class="bg-white/5 p-3 rounded-lg text-center">
+              <div class="text-2xl font-bold" style="color: var(--color-turquoise)">92%</div>
+              <p class="text-xs text-gray-400">Precisión del modelo</p>
+            </div>
+            <div class="bg-white/5 p-3 rounded-lg text-center">
+              <div class="text-2xl font-bold" style="color: var(--color-purple)">35%</div>
+              <p class="text-xs text-gray-400">Reducción en churn</p>
+            </div>
+            <div class="bg-white/5 p-3 rounded-lg text-center">
+              <div class="text-2xl font-bold" style="color: var(--color-mint)">8</div>
+              <p class="text-xs text-gray-400">Segmentos identificados</p>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <h4 class="font-semibold mb-2 text-sm" style="color: #00BCD4;">Tecnologías implementadas:</h4>
+            <ul class="text-xs md:text-sm text-gray-300 space-y-1">
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Algoritmos: Random Forest, XGBoost, K-Means</li>
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Pipeline automatizado de ETL en Python</li>
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Despliegue en AWS Lambda con triggers automáticos</li>
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Dashboard de monitoreo en tiempo real</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex gap-2 flex-wrap mt-4">
+          <button class="bg-gradient-to-r from-cyan-600 to-purple-600 px-4 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition flex-1 md:flex-initial">
+            <i class="fas fa-code"></i> Ver Código
+          </button>
+          <button class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg text-sm font-semibold transition flex-1 md:flex-initial">
+            <i class="fas fa-chart-pie"></i> Análisis Técnico
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Proyecto 4: Automatización con IA -->
+    <div class="project-card mb-6">
+      <div class="project-header" style="background: linear-gradient(135deg, #4CAF50 0%, #2196F3 100%);">
+        <i class="fas fa-robot"></i>
+      </div>
+      <div class="p-4 md:p-6 flex-1 flex flex-col">
+        <div class="flex-1">
+          <div class="flex flex-wrap items-center gap-2 mb-3">
+            <span class="tech-tag" style="background: #4CAF50; color: white;">ChatGPT</span>
+            <span class="tech-tag" style="background: #2196F3; color: white;">IA</span>
+            <span class="tech-tag" style="background: var(--color-purple); color: white;">Jira</span>
+            <span class="tech-tag" style="background: var(--color-mustard); color: var(--color-darker);">Automation</span>
+          </div>
+          
+          <h3 class="text-xl md:text-2xl font-bold mb-3" style="color: #4CAF50;">
+            Automatización de Gestión de Proyectos con IA (en construcción)
+          </h3>
+          
+          <p class="text-sm md:text-base text-gray-300 mb-4 leading-relaxed">
+            Implementación de sistema de automatización inteligente para gestión de proyectos, integrando ChatGPT con 
+            Jira para generación automática de tareas, estimaciones y reportes. Reducción significativa en tiempo 
+            administrativo y mejora en precisión de planificación.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
+            <div class="bg-white/5 p-3 rounded-lg text-center">
+              <div class="text-2xl font-bold" style="color: #4CAF50;">70%</div>
+              <p class="text-xs text-gray-400">Reducción tiempo admin</p>
+            </div>
+            <div class="bg-white/5 p-3 rounded-lg text-center">
+              <div class="text-2xl font-bold" style="color: #2196F3;">50+</div>
+              <p class="text-xs text-gray-400">Tareas auto-generadas</p>
+            </div>
+            <div class="bg-white/5 p-3 rounded-lg text-center">
+              <div class="text-2xl font-bold" style="color: var(--color-mint)">15</div>
+              <p class="text-xs text-gray-400">Equipos beneficiados</p>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <h4 class="font-semibold mb-2 text-sm" style="color: #4CAF50;">Funcionalidades implementadas:</h4>
+            <ul class="text-xs md:text-sm text-gray-300 space-y-1">
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Generación automática de user stories</li>
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Estimación inteligente de tiempos y recursos</li>
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Reportes ejecutivos automatizados</li>
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Asignación optimizada de tareas por IA</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex gap-2 flex-wrap mt-4">
+          <button class="bg-gradient-to-r from-green-600 to-blue-600 px-4 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition flex-1 md:flex-initial">
+            <i class="fas fa-play"></i> Ver Demo
+          </button>
+          <button class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg text-sm font-semibold transition flex-1 md:flex-initial">
+            <i class="fas fa-cogs"></i> Documentación
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Proyecto 5: Data Governance -->
+    <div class="project-card mb-6">
+      <div class="project-header" style="background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%);">
+        <i class="fas fa-database"></i>
+      </div>
+      <div class="p-4 md:p-6 flex-1 flex flex-col">
+        <div class="flex-1">
+          <div class="flex flex-wrap items-center gap-2 mb-3">
+            <span class="tech-tag" style="background: #FF6B6B; color: white;">Data Governance</span>
+            <span class="tech-tag" style="background: #4ECDC4; color: var(--color-darker);">SQL Server</span>
+            <span class="tech-tag" style="background: var(--color-purple); color: white;">Metadatos</span>
+            <span class="tech-tag" style="background: var(--color-mint); color: var(--color-darker);">ETL</span>
+          </div>
+          
+          <h3 class="text-xl md:text-2xl font-bold mb-3" style="color: #FF6B6B;">
+            Framework de Gobierno de Datos Empresarial (en construcción)
+          </h3>
+          
+          <p class="text-sm md:text-base text-gray-300 mb-4 leading-relaxed">
+            Diseño e implementación de framework completo de gobierno de datos, incluyendo catálogo de metadatos, 
+            políticas de calidad, y procesos de lineage. Mejora significativa en confiabilidad y trazabilidad de datos.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
+            <div class="bg-white/5 p-3 rounded-lg text-center">
+              <div class="text-2xl font-bold" style="color: #4ECDC4;">500+</div>
+              <p class="text-xs text-gray-400">Datasets catalogados</p>
+            </div>
+            <div class="bg-white/5 p-3 rounded-lg text-center">
+              <div class="text-2xl font-bold" style="color: #FF6B6B;">95%</div>
+              <p class="text-xs text-gray-400">Calidad de datos</p>
+            </div>
+            <div class="bg-white/5 p-3 rounded-lg text-center">
+              <div class="text-2xl font-bold" style="color: var(--color-mint)">100%</div>
+              <p class="text-xs text-gray-400">Trazabilidad</p>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <h4 class="font-semibold mb-2 text-sm" style="color: #FF6B6B;">Componentes del framework:</h4>
+            <ul class="text-xs md:text-sm text-gray-300 space-y-1">
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Catálogo de metadatos centralizado</li>
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Políticas de calidad y validación automática</li>
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Data lineage end-to-end</li>
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Dashboard de monitoreo de calidad</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex gap-2 flex-wrap mt-4">
+          <button class="bg-gradient-to-r from-red-500 to-teal-500 px-4 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition flex-1 md:flex-initial">
+            <i class="fas fa-sitemap"></i> Ver Arquitectura
+          </button>
+          <button class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg text-sm font-semibold transition flex-1 md:flex-initial">
+            <i class="fas fa-book"></i> Guía Completa
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Proyecto 6: SAP Analytics -->
+    <div class="project-card mb-6">
+      <div class="project-header" style="background: linear-gradient(135deg, #0066B2 0%, #00A3E0 100%);">
+        <i class="fas fa-chart-network"></i>
+      </div>
+      <div class="p-4 md:p-6 flex-1 flex flex-col">
+        <div class="flex-1">
+          <div class="flex flex-wrap items-center gap-2 mb-3">
+            <span class="tech-tag" style="background: #0066B2; color: white;">SAP SD</span>
+            <span class="tech-tag" style="background: #00A3E0; color: white;">Analytics</span>
+            <span class="tech-tag" style="background: var(--color-mustard); color: var(--color-darker);">Excel</span>
+            <span class="tech-tag" style="background: var(--color-purple); color: white;">KPIs</span>
+          </div>
+          
+          <h3 class="text-xl md:text-2xl font-bold mb-3" style="color: #00A3E0;">
+            Optimización de Procesos de Ventas en SAP (en construcción)
+          </h3>
+          
+          <p class="text-sm md:text-base text-gray-300 mb-4 leading-relaxed">
+            Análisis y optimización de procesos comerciales en SAP SD, desarrollo de reportes personalizados y dashboards 
+            para seguimiento de KPIs comerciales. Integración con Excel para análisis avanzado y forecasting.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
+            <div class="bg-white/5 p-3 rounded-lg text-center">
+              <div class="text-2xl font-bold" style="color: var(--color-turquoise);">45%</div>
+              <p class="text-xs text-gray-400">Reducción ciclo ventas</p>
+            </div>
+            <div class="bg-white/5 p-3 rounded-lg text-center">
+              <div class="text-2xl font-bold" style="color: #00A3E0;">20+</div>
+              <p class="text-xs text-gray-400">Reportes automatizados</p>
+            </div>
+            <div class="bg-white/5 p-3 rounded-lg text-center">
+              <div class="text-2xl font-bold" style="color: var(--color-mint)">98%</div>
+              <p class="text-xs text-gray-400">Precisión de datos</p>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <h4 class="font-semibold mb-2 text-sm" style="color: #00A3E0;">Mejoras implementadas:</h4>
+            <ul class="text-xs md:text-sm text-gray-300 space-y-1">
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Automatización de órdenes de venta</li>
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Dashboard de KPIs comerciales en tiempo real</li>
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Integración SAP-Excel para análisis avanzado</li>
+              <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Optimización de procesos de facturación</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex gap-2 flex-wrap mt-4">
+          <button class="bg-gradient-to-r from-blue-700 to-blue-400 px-4 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition flex-1 md:flex-initial">
+            <i class="fas fa-chart-bar"></i> Ver Reportes
+          </button>
+          <button class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg text-sm font-semibold transition flex-1 md:flex-initial">
+            <i class="fas fa-file-invoice"></i> Caso de Uso
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Final -->
+    <div class="project-card text-center mt-8">
+      <div class="p-6 md:p-8">
+        <div class="text-5xl mb-4">💼</div>
+        <h3 class="text-2xl md:text-3xl font-bold mb-4" style="color: var(--color-mint)">
+          ¿Tienes un proyecto en mente?
+        </h3>
+        <p class="text-base md:text-lg text-gray-300 mb-6 max-w-2xl mx-auto">
+          Transformemos tus datos en ventaja competitiva. Hablemos sobre cómo puedo ayudarte 
+          a alcanzar tus objetivos de negocio.
+        </p>
+        <div class="flex gap-3 md:gap-4 justify-center flex-wrap">
+          <a href="mailto:ortesancode@gmail.com" class="bg-gradient-to-r from-purple-600 to-cyan-500 px-6 md:px-8 py-3 rounded-full font-bold hover:opacity-90 transition text-sm md:text-base">
+            <i class="fas fa-envelope"></i> Contactar
+          </a>
+          <a href="certificaciones.html" class="bg-white/10 hover:bg-white/20 px-6 md:px-8 py-3 rounded-full font-bold transition text-sm md:text-base">
+            <i class="fas fa-certificate"></i> Ver Certificaciones
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="mt-auto py-4 md:py-6 text-center border-t border-white/20 w-full">
+    <p class="text-sm md:text-base text-gray-300">&copy; 2025 Sandra Ortellado | Analista de Datos & Marketing Digital</p>
+  </footer>
+</body>
+</html>

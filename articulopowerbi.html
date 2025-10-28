@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cómo Power BI transformó nuestra toma de decisiones | Sandra Ortellado</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+    
+    :root {
+      --color-mint: #B4E197;
+      --color-turquoise: #22D3EE;
+      --color-purple: #A855F7;
+      --color-mustard: #FCD34D;
+      --color-dark: #1e293b;
+      --color-darker: #0f172a;
+    }
+    
+    body { 
+      background: linear-gradient(135deg, var(--color-darker) 0%, var(--color-dark) 100%);
+      background-attachment: fixed;
+      color: white; 
+      font-family: 'Poppins', sans-serif; 
+    }
+    
+    header {
+      background: linear-gradient(90deg, var(--color-purple) 0%, var(--color-turquoise) 100%);
+    }
+
+    .nav-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .nav-button:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+    }
+
+    .article-content {
+      background: rgba(255,255,255,0.05);
+      border-radius: 1rem;
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .article-content h2 {
+      color: var(--color-turquoise);
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .article-content h3 {
+      color: var(--color-mint);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .article-content p {
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      color: #e2e8f0;
+    }
+
+    .article-content ul, .article-content ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .article-content li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+
+    .highlight-box {
+      background: rgba(34, 211, 238, 0.1);
+      border-left: 4px solid var(--color-turquoise);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0.5rem;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.1);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .article-content {
+        padding: 1.5rem;
+      }
+
+      .article-content h2 {
+        font-size: 1.5rem;
+      }
+
+      header h1 {
+        font-size: 1.25rem !important;
+      }
+
+      header nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+  <header class="w-full py-4 md:py-6 shadow-lg">
+    <nav class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center px-4 md:px-6 gap-3">
+      <h1 class="text-xl md:text-2xl font-bold text-white">Sandra Ortellado</h1>
+      <ul class="flex flex-wrap gap-2 md:gap-4 justify-center">
+        <li><a href="portfolio.html" class="nav-button"><i class="fas fa-home"></i> Portfolio</a></li>
+        <li><a href="blog.html" class="nav-button"><i class="fas fa-arrow-left"></i> Volver al Blog</a></li>
+        <li><a href="certificaciones-mejorado.html" class="nav-button"><i class="fas fa-certificate"></i> Certificaciones</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="max-w-4xl w-full px-4 md:px-6 mt-8 md:mt-12 mb-8 md:mb-12 mx-auto">
+    
+    <!-- Hero del artículo -->
+    <div class="text-center mb-8">
+      <div class="flex justify-center gap-2 mb-4 flex-wrap">
+        <span class="tag" style="background: var(--color-mustard); color: var(--color-darker);">Data Analytics</span>
+        <span class="tag" style="background: var(--color-turquoise); color: var(--color-darker);">Power BI</span>
+        <span class="tag" style="background: var(--color-purple); color: white;">Business Intelligence</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--color-mint)">
+        Cómo Power BI transformó la toma de decisiones en nuestra empresa
+      </h1>
+      <div class="flex justify-center items-center gap-4 text-sm text-gray-400">
+        <span><i class="fas fa-calendar"></i> 15 Marzo 2025</span>
+        <span><i class="fas fa-clock"></i> 8 min lectura</span>
+        <span><i class="fas fa-user"></i> Sandra Ortellado</span>
+      </div>
+    </div>
+
+    <!-- Contenido del artículo -->
+    <article class="article-content">
+      
+      <p class="text-lg" style="color: var(--color-turquoise); font-weight: 500;">
+        Hace un año, nuestra empresa tomaba decisiones basándose en reportes de Excel que tardaban días en prepararse. 
+        Hoy, los ejecutivos tienen acceso en tiempo real a todas las métricas críticas del negocio. Esta es la historia 
+        de cómo Power BI revolucionó nuestra cultura de datos.
+      </p>
+
+      <h2>El problema: Datos dispersos y decisiones lentas</h2>
+      
+      <p>
+        Cuando llegué a la empresa, el escenario era típico de muchas organizaciones en transición digital: datos 
+        importantes dispersos en múltiples sistemas (CRM, ERP, hojas de cálculo), reportes manuales que consumían 
+        horas de trabajo, y lo peor de todo, decisiones estratégicas tomadas con información de semanas atrás.
+      </p>
+
+      <div class="highlight-box">
+        <p style="margin: 0; font-weight: 600;">
+          <i class="fas fa-exclamation-circle mr-2" style="color: var(--color-mustard);"></i>
+          El 78% de las empresas afirman que la falta de acceso a datos en tiempo real retrasa sus decisiones 
+          estratégicas en al menos una semana.
+        </p>
+      </div>
+
+      <p>
+        El equipo de ventas necesitaba conocer el rendimiento por región, el departamento de marketing quería entender 
+        el ROI de sus campañas, y la dirección necesitaba visibilidad del flujo de caja. Todo esto requería que 
+        alguien del equipo de finanzas pasara días compilando información.
+      </p>
+
+      <h2>La solución: Implementación estratégica de Power BI</h2>
+
+      <p>
+        Decidimos abordar el problema en fases, comenzando con un proyecto piloto enfocado en el área de ventas. 
+        La clave no fue solo implementar la tecnología, sino cambiar la mentalidad organizacional hacia una 
+        cultura data-driven.
+      </p>
+
+      <h3>Fase 1: Consolidación de fuentes de datos</h3>
+
+      <p>
+        Lo primero fue identificar y conectar todas las fuentes de datos relevantes:
+      </p>
+
+      <ul>
+        <li><strong>Sistema ERP:</strong> Datos de ventas, inventario y finanzas</li>
+        <li><strong>CRM (Salesforce):</strong> Pipeline de ventas y datos de clientes</li>
+        <li><strong>Hojas de Excel:</strong> Presupuestos y proyecciones manuales</li>
+        <li><strong>Google Analytics:</strong> Métricas de tráfico web y conversión</li>
+        <li><strong>Base de datos SQL:</strong> Histórico transaccional</li>
+      </ul>
+
+      <p>
+        Utilizamos Power Query para crear procesos ETL (Extract, Transform, Load) automatizados que actualizaban 
+        los datos cada hora. Esto significó pasar de reportes semanales a información en tiempo real.
+      </p>
+
+      <h3>Fase 2: Diseño de dashboards centrados en el usuario</h3>
+
+      <p>
+        El error más común en proyectos de BI es crear dashboards que nadie usa. Para evitarlo, realizamos 
+        workshops con cada departamento para entender:
+      </p>
+
+      <ol>
+        <li>¿Qué preguntas necesitan responder diariamente?</li>
+        <li>¿Qué métricas son realmente críticas para sus decisiones?</li>
+        <li>¿Qué nivel de detalle necesitan ver?</li>
+      </ol>
+
+      <div class="highlight-box">
+        <p style="margin: 0; font-weight: 600; color: var(--color-mint);">
+          <i class="fas fa-lightbulb mr-2"></i>
+          Consejo clave: Un buen dashboard debe responder preguntas, no generarlas. La simplicidad es poder.
+        </p>
+      </div>
+
+      <p>
+        El resultado fueron dashboards específicos por área:
+      </p>
+
+      <ul>
+        <li><strong>Dashboard Ejecutivo:</strong> KPIs financieros, ventas vs. presupuesto, indicadores de salud del negocio</li>
+        <li><strong>Dashboard Comercial:</strong> Pipeline, conversión, análisis por vendedor y región</li>
+        <li><strong>Dashboard de Marketing:</strong> ROI de campañas, costo de adquisición, funnel de conversión</li>
+        <li><strong>Dashboard Operativo:</strong> Inventario, entregas, satisfacción del cliente</li>
+      </ul>
+
+      <h3>Fase 3: Medidas DAX avanzadas</h3>
+
+      <p>
+        La verdadera magia de Power BI está en DAX (Data Analysis Expressions). Creamos medidas personalizadas 
+        que iban más allá de simples sumas y promedios:
+      </p>
+
+      <ul>
+        <li><strong>YoY (Year over Year):</strong> Comparaciones automáticas con el año anterior</li>
+        <li><strong>Moving Averages:</strong> Promedios móviles para identificar tendencias</li>
+        <li><strong>Forecasting:</strong> Predicciones basadas en datos históricos</li>
+        <li><strong>Customer Lifetime Value:</strong> Valor proyectado de cada cliente</li>
+        <li><strong>Churn Rate:</strong> Tasa de abandono calculada automáticamente</li>
+      </ul>
+
+      <h2>Los resultados: Transformación medible</h2>
+
+      <p>
+        Después de 6 meses de implementación completa, los resultados superaron nuestras expectativas:
+      </p>
+
+      <div style="background: rgba(255,255,255,0.08); padding: 1.5rem; border-radius: 0.5rem; margin: 1.5rem 0;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+          <div style="text-align: center;">
+            <div style="font-size: 2.5rem; font-weight: 700; color: var(--color-mint);">85%</div>
+            <p style="margin: 0; font-size: 0.875rem;">Reducción en tiempo de reporteo</p>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 2.5rem; font-weight: 700; color: var(--color-turquoise);">40%</div>
+            <p style="margin: 0; font-size: 0.875rem;">Mejora en velocidad de decisión</p>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 2.5rem; font-weight: 700; color: var(--color-mustard);">92%</div>
+            <p style="margin: 0; font-size: 0.875rem;">Adopción de usuarios</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Casos de éxito concretos</h3>
+
+      <p><strong>1. Optimización de inventario:</strong></p>
+      <p>
+        Al visualizar patrones de venta por estacionalidad y región, redujimos el exceso de inventario en un 30%, 
+        liberando capital de trabajo por más de $500,000.
+      </p>
+
+      <p><strong>2. Identificación de oportunidades de venta:</strong></p>
+      <p>
+        El dashboard comercial permitió identificar clientes con potencial de upsell, resultando en un incremento 
+        del 25% en ventas cruzadas.
+      </p>
+
+      <p><strong>3. Optimización de marketing:</strong></p>
+      <p>
+        Al poder comparar el ROI de diferentes canales en tiempo real, reasignamos presupuesto hacia canales de 
+        mejor desempeño, mejorando el ROI general en 180%.
+      </p>
+
+      <h2>Lecciones aprendidas</h2>
+
+      <h3>1. La calidad de datos es fundamental</h3>
+      <p>
+        "Garbage in, garbage out" es especialmente cierto en BI. Invertimos tiempo en limpiar y estandarizar 
+        datos antes de visualizarlos. Implementamos reglas de validación y procesos de data quality que se 
+        ejecutan automáticamente.
+      </p>
+
+      <h3>2. La adopción es un proceso, no un evento</h3>
+      <p>
+        No basta con crear dashboards hermosos. Realizamos sesiones de capacitación continuas, creamos guías 
+        de usuario, y designamos "champions" en cada departamento que ayudan a sus colegas.
+      </p>
+
+      <h3>3. Iteración constante</h3>
+      <p>
+        Los mejores dashboards son aquellos que evolucionan con las necesidades del negocio. Establecimos 
+        reuniones mensuales de feedback donde los usuarios pueden solicitar ajustes y nuevas funcionalidades.
+      </p>
+
+      <div class="highlight-box">
+        <h3 style="margin-top: 0; color: white;">Recursos recomendados para empezar</h3>
+        <ul style="margin-bottom: 0;">
+          <li>Microsoft Learn: Cursos gratuitos de Power BI</li>
+          <li>SQLBI: Recursos avanzados de DAX</li>
+          <li>Guy in a Cube: Canal de YouTube con tips prácticos</li>
+          <li>Power BI Community: Foro oficial con miles de soluciones</li>
+        </ul>
+      </div>
+
+      <h2>Conclusión</h2>
+
+      <p>
+        La implementación de Power BI no fue solo un cambio tecnológico, fue una transformación cultural. 
+        Hoy, nuestra organización toma decisiones basadas en datos actualizados, no en intuiciones o información 
+        desactualizada.
+      </p>
+
+      <p>
+        Si estás considerando implementar una solución de Business Intelligence en tu organización, mi consejo 
+        es: empieza pequeño, enfócate en resolver problemas reales, y construye sobre el éxito. Los datos 
+        siempre estuvieron ahí; lo que cambió fue nuestra capacidad de convertirlos en insights accionables.
+      </p>
+
+      <p style="color: var(--color-turquoise); font-weight: 600; margin-top: 2rem;">
+        <i class="fas fa-question-circle mr-2"></i>
+        ¿Tienes preguntas sobre cómo implementar Power BI en tu empresa? Contáctame y hablemos sobre 
+        cómo podemos transformar tus datos en ventaja competitiva.
+      </p>
+
+    </article>
+
+    <!-- Compartir y navegación -->
+    <div class="mt-8 flex flex-wrap gap-4 justify-between items-center" style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 1rem;">
+      <div>
+        <p class="text-sm text-gray-400 mb-2">Compartir este artículo:</p>
+        <div class="flex gap-3">
+          <button class="bg-white/10 hover:bg-white/20 w-10 h-10 rounded-full transition flex items-center justify-center">
+            <i class="fab fa-linkedin"></i>
+          </button>
+          <button class="bg-white/10 hover:bg-white/20 w-10 h-10 rounded-full transition flex items-center justify-center">
+            <i class="fab fa-twitter"></i>
+          </button>
+          <button class="bg-white/10 hover:bg-white/20 w-10 h-10 rounded-full transition flex items-center justify-center">
+            <i class="fas fa-link"></i>
+          </button>
+        </div>
+      </div>
+      <a href="blog.html" class="bg-gradient-to-r from-purple-600 to-cyan-500 px-6 py-3 rounded-full font-bold hover:opacity-90 transition">
+        <i class="fas fa-arrow-left mr-2"></i> Ver más artículos
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="mt-auto py-4 md:py-6 text-center border-t border-white/20 w-full">
+    <p class="text-sm md:text-base text-gray-300">&copy; 2025 Sandra Ortellado | Analista de Datos & Marketing Digital</p>
+  </footer>
+</body>
+</html>

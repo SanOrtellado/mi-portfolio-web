@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV - Sandra Ortellado | Data Analyst & Marketing Digital</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    :root {
+      --color-primary: #2563eb;
+      --color-secondary: #64748b;
+      --color-accent: #0ea5e9;
+      --color-dark: #0f172a;
+    }
+    
+    body { 
+      font-family: 'Inter', sans-serif;
+      color: var(--color-dark);
+      background: #f8fafc;
+    }
+
+    .cv-container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      background: white;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .cv-header {
+      background: linear-gradient(135deg, #1e40af 0%, #0ea5e9 100%);
+      color: white;
+      padding: 3rem 2rem;
+    }
+
+    .section {
+      padding: 2rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .section:last-child {
+      border-bottom: none;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--color-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .keyword {
+      display: inline-block;
+      background: #eff6ff;
+      color: #1e40af;
+      padding: 0.25rem 0.75rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin: 0.25rem;
+    }
+
+    .experience-item, .education-item {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .experience-item:last-child, .education-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .job-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--color-dark);
+    }
+
+    .company {
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+
+    .date {
+      color: var(--color-secondary);
+      font-size: 0.875rem;
+    }
+
+    .skill-category {
+      margin-bottom: 1rem;
+    }
+
+    .skill-category h4 {
+      font-weight: 600;
+      color: var(--color-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .download-btn {
+      background: linear-gradient(135deg, #1e40af 0%, #0ea5e9 100%);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .download-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+    }
+
+    .print-btn {
+      background: white;
+      border: 2px solid var(--color-primary);
+      color: var(--color-primary);
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+    }
+
+    .print-btn:hover {
+      background: var(--color-primary);
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .cv-header {
+        padding: 2rem 1.5rem;
+      }
+      
+      .section {
+        padding: 1.5rem;
+      }
+
+      .cv-container {
+        margin: 1rem;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+      
+      .no-print {
+        display: none !important;
+      }
+
+      .cv-container {
+        box-shadow: none;
+        margin: 0;
+      }
+
+      .section {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navegación superior -->
+  <nav class="bg-white shadow-sm py-4 no-print">
+    <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+      <a href="index.html" class="text-xl font-bold" style="color: var(--color-primary);">
+        <i class="fas fa-arrow-left mr-2"></i> Volver al Portfolio
+      </a>
+      <div class="flex gap-3">
+        <a href="mailto:ortesancode@gmail.com" class="text-gray-600 hover:text-blue-600">
+          <i class="fas fa-envelope text-xl"></i>
+        </a>
+        <a href="https://ar.linkedin.com/in/sandra-ortellado" class="text-gray-600 hover:text-blue-600">
+          <i class="fab fa-linkedin text-xl"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Botones de acción -->
+  <div class="max-w-6xl mx-auto px-4 py-6 flex flex-wrap gap-4 justify-center no-print">
+    <a href="CV - Sandra Ortellado _ Data Analyst & Marketing Digital.pdf" download class="download-btn">
+      <i class="fas fa-download"></i>
+      Descargar CV (PDF)
+    </a>
+    <button onclick="window.print()" class="print-btn">
+      <i class="fas fa-print"></i>
+      Imprimir CV
+    </button>
+  </div>
+
+  <!-- Contenedor del CV -->
+  <div class="cv-container">
+    
+    <!-- Header -->
+    <div class="cv-header">
+      <h1 class="text-4xl font-bold mb-2">Sandra Ortellado</h1>
+      <p class="text-xl mb-4 opacity-90">Analista de Datos | Licenciatura en Data Science</p>
+      <p class="text-base opacity-80 max-w-3xl">
+        Automatización con Python, SQL & Power BI | Growth Marketing & Research
+      </p>
+      <div class="flex flex-wrap gap-4 mt-6">
+        <div class="flex items-center gap-2">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Buenos Aires, Argentina</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i class="fas fa-envelope"></i>
+          <span>ortesancode@gmail.com</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i class="fab fa-linkedin"></i>
+          <span>linkedin.com/in/sandraortellado</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Perfil Profesional -->
+    <div class="section">
+      <h2 class="section-title">
+        <i class="fas fa-user-circle mr-2"></i> Perfil Profesional
+      </h2>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        <strong>Analista de datos especializada en marketing digital y business intelligence</strong> con sólida formación 
+        en ciencias de datos y experiencia en transformación de datos en estrategias comerciales. Combino análisis técnico, 
+        automatización con Python y visualización avanzada en Power BI para impulsar decisiones basadas en datos.
+      </p>
+      <p class="text-gray-700 leading-relaxed">
+        Actualmente como <strong>Analista Sr. de Marketing en Arbell</strong>, optimizo campañas digitales, investigo 
+        comportamiento del mercado y desarrollo estrategias de captación y retención mediante análisis predictivo y 
+        growth marketing. Experiencia en automatización de procesos, análisis de funnel, investigación de mercado e 
+        inteligencia de negocios.
+      </p>
+    </div>
+
+    <!-- Competencias Clave (Keywords para ATS) -->
+    <div class="section">
+      <h2 class="section-title">
+        <i class="fas fa-star mr-2"></i> Competencias Clave
+      </h2>
+      <div class="flex flex-wrap">
+        <span class="keyword">Data Analysis</span>
+        <span class="keyword">Python</span>
+        <span class="keyword">SQL</span>
+        <span class="keyword">Power BI</span>
+        <span class="keyword">Machine Learning</span>
+        <span class="keyword">Google Analytics</span>
+        <span class="keyword">Marketing Digital</span>
+        <span class="keyword">Growth Marketing</span>
+        <span class="keyword">A/B Testing</span>
+        <span class="keyword">Business Intelligence</span>
+        <span class="keyword">Data Visualization</span>
+        <span class="keyword">Google Ads</span>
+        <span class="keyword">SEO/SEM</span>
+        <span class="keyword">CRM</span>
+        <span class="keyword">Automatización</span>
+        <span class="keyword">Investigación de Mercado</span>
+        <span class="keyword">KPIs</span>
+        <span class="keyword">ROI Analysis</span>
+        <span class="keyword">Data Governance</span>
+        <span class="keyword">Predictive Analytics</span>
+        <span class="keyword">Pandas</span>
+        <span class="keyword">NumPy</span>
+        <span class="keyword">Matplotlib</span>
+        <span class="keyword">Excel Avanzado</span>
+        <span class="keyword">React.js</span>
+        <span class="keyword">AWS</span>
+        <span class="keyword">SAP SD</span>
+        <span class="keyword">Jira</span>
+        <span class="keyword">Metodologías Ágiles</span>
+        <span class="keyword">ETL</span>
+      </div>
+    </div>
+
+    <!-- Experiencia Laboral -->
+    <div class="section">
+      <h2 class="section-title">
+        <i class="fas fa-briefcase mr-2"></i> Experiencia Laboral
+      </h2>
+
+      <div class="experience-item">
+        <div class="flex flex-wrap justify-between items-start mb-2">
+          <div>
+            <div class="job-title">Analista Sr. de Marketing</div>
+            <div class="company">Arbell - Tu Mejor Versión</div>
+          </div>
+          <div class="date">Octubre 2024 - Actualidad</div>
+        </div>
+        <p class="text-sm text-gray-600 mb-3">Presencial | Buenos Aires, Argentina</p>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Análisis avanzado de campañas digitales y optimización de inversión publicitaria mediante análisis de datos</li>
+          <li>Investigación de mercado para identificación de oportunidades de crecimiento y tendencias del consumidor</li>
+          <li>Automatización de reportes y dashboards con Power BI y Python, reduciendo tiempo de análisis en 70%</li>
+          <li>Desarrollo de estrategias de growth marketing basadas en análisis predictivo y segmentación de audiencias</li>
+          <li>Implementación de métricas de conversión y engagement para optimización continua de campañas</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="flex flex-wrap justify-between items-start mb-2">
+          <div>
+            <div class="job-title">Analista de Ventas</div>
+            <div class="company">Arbell - Tu Mejor Versión</div>
+          </div>
+          <div class="date">Febrero 2024 - Actualidad</div>
+        </div>
+        <p class="text-sm text-gray-600 mb-3">Buenos Aires, Argentina</p>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Análisis de datos históricos y en tiempo real de ventas, identificación de patrones y tendencias</li>
+          <li>Generación de informes periódicos sobre KPIs de ventas y evaluación de eficiencia del funnel</li>
+          <li>Desarrollo de propuestas de mejora basadas en análisis de datos y automatización con CRM</li>
+          <li>Optimización del funnel de ventas mediante análisis de conversión en cada etapa</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="flex flex-wrap justify-between items-start mb-2">
+          <div>
+            <div class="job-title">Analista de Procesos</div>
+            <div class="company">Solutix S.A.</div>
+          </div>
+          <div class="date">Noviembre 2023 - Marzo 2025</div>
+        </div>
+        <p class="text-sm text-gray-600 mb-3">En remoto</p>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Identificación de oportunidades de mejora en procesos empresariales mediante análisis de datos</li>
+          <li>Elaboración de reportes sobre desempeño y colaboración en definición de procesos del área</li>
+          <li>Implementación de mejoras de eficiencia operativa basadas en análisis cuantitativo</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="flex flex-wrap justify-between items-start mb-2">
+          <div>
+            <div class="job-title">Instructora de Python - Análisis de Datos</div>
+            <div class="company">E-Academy | Proyecto Personal</div>
+          </div>
+          <div class="date">Marzo 2021 - Noviembre 2024</div>
+        </div>
+        <p class="text-sm text-gray-600 mb-3">En remoto | Buenos Aires</p>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Formación especializada en Python para análisis de datos (pandas, NumPy, matplotlib)</li>
+          <li>Coordinación académica: planificación de rutas de aprendizaje y estrategias educativas</li>
+          <li>Desarrollo de competencias analíticas en profesionales para análisis de datos</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Formación Académica -->
+    <div class="section">
+      <h2 class="section-title">
+        <i class="fas fa-graduation-cap mr-2"></i> Formación Académica
+      </h2>
+
+      <div class="education-item">
+        <div class="flex flex-wrap justify-between items-start mb-2">
+          <div>
+            <div class="job-title">Licenciatura en Ciencias de Datos</div>
+            <div class="company">Universidad Siglo 21</div>
+          </div>
+          <div class="date">Marzo 2024 - Diciembre 2027 | En curso</div>
+        </div>
+        <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm">
+          <li>Análisis y modelado de datos complejos</li>
+          <li>Planificación y dirección de proyectos de datos</li>
+          <li>Gobierno de Datos e Inteligencia de Negocios</li>
+          <li>Machine Learning y análisis predictivo</li>
+        </ul>
+      </div>
+
+      <div class="education-item">
+        <div class="flex flex-wrap justify-between items-start mb-2">
+          <div>
+            <div class="job-title">Tecnicatura Universitaria en Programación</div>
+            <div class="company">Teclab Instituto Técnico Superior</div>
+          </div>
+          <div class="date">Marzo 2021 - Diciembre 2023</div>
+        </div>
+        <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm">
+          <li>Desarrollo web multiplataforma (HTML, CSS, JavaScript, React.js)</li>
+          <li>Gestión de bases de datos relacionales (SQL, Oracle, PostgreSQL)</li>
+          <li>Desarrollo móvil con Java y Android Studio</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Habilidades Técnicas -->
+    <div class="section">
+      <h2 class="section-title">
+        <i class="fas fa-code mr-2"></i> Habilidades Técnicas
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <div class="skill-category">
+          <h4><i class="fas fa-chart-bar text-blue-600 mr-2"></i> Análisis de Datos</h4>
+          <p class="text-sm text-gray-700 mb-2">
+            <strong>Avanzado:</strong> Python (Pandas, NumPy, Matplotlib), Power BI, SQL, Excel Avanzado
+          </p>
+          <p class="text-sm text-gray-700">
+            <strong>Intermedio:</strong> Looker Studio, Google Analytics 4, R, Tableau
+          </p>
+        </div>
+
+        <div class="skill-category">
+          <h4><i class="fas fa-robot text-purple-600 mr-2"></i> Machine Learning & IA</h4>
+          <p class="text-sm text-gray-700 mb-2">
+            <strong>Bibliotecas:</strong> scikit-learn, TensorFlow básico
+          </p>
+          <p class="text-sm text-gray-700">
+            <strong>Técnicas:</strong> Regresión, clasificación, clustering, análisis predictivo
+          </p>
+        </div>
+
+        <div class="skill-category">
+          <h4><i class="fas fa-bullhorn text-pink-600 mr-2"></i> Marketing Digital</h4>
+          <p class="text-sm text-gray-700">
+            Google Ads, Google Analytics, SEO/SEM, Growth Marketing, A/B Testing, 
+            Inbound Marketing, Neuromarketing, Email Marketing, Análisis de ROI
+          </p>
+        </div>
+
+        <div class="skill-category">
+          <h4><i class="fas fa-laptop-code text-green-600 mr-2"></i> Desarrollo Web</h4>
+          <p class="text-sm text-gray-700">
+            HTML5, CSS3, JavaScript, React.js, Tailwind CSS, Desarrollo responsive, 
+            Android Studio (básico)
+          </p>
+        </div>
+
+        <div class="skill-category">
+          <h4><i class="fas fa-database text-blue-600 mr-2"></i> Bases de Datos</h4>
+          <p class="text-sm text-gray-700">
+            SQL Server, PostgreSQL, Oracle, MySQL, Diseño de bases de datos, 
+            SQL Server Reporting Services (SSRS)
+          </p>
+        </div>
+
+        <div class="skill-category">
+          <h4><i class="fas fa-tools text-gray-600 mr-2"></i> Herramientas Empresariales</h4>
+          <p class="text-sm text-gray-700">
+            CRM, Jira, SAP SD, AWS (básico), Git, Metodologías Ágiles, 
+            Data Governance, ETL
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Certificaciones Destacadas -->
+    <div class="section">
+      <h2 class="section-title">
+        <i class="fas fa-certificate mr-2"></i> Certificaciones Profesionales
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        
+        <div class="bg-gray-50 p-4 rounded-lg">
+          <h4 class="font-semibold text-gray-900 mb-1">Machine Learning y Data Science con Python</h4>
+          <p class="text-sm text-gray-600">Udemy | Enero 2025</p>
+        </div>
+
+        <div class="bg-gray-50 p-4 rounded-lg">
+          <h4 class="font-semibold text-gray-900 mb-1">Power BI - Analista de Datos Avanzado</h4>
+          <p class="text-sm text-gray-600">Udemy | Diciembre 2024</p>
+        </div>
+
+        <div class="bg-gray-50 p-4 rounded-lg">
+          <h4 class="font-semibold text-gray-900 mb-1">Google Ads (Adwords) - CONVIERTE más con SEM</h4>
+          <p class="text-sm text-gray-600">Udemy | Febrero 2025</p>
+        </div>
+
+        <div class="bg-gray-50 p-4 rounded-lg">
+          <h4 class="font-semibold text-gray-900 mb-1">Jira: Gestiona proyectos corporativos de forma ágil</h4>
+          <p class="text-sm text-gray-600">Udemy | Febrero 2025</p>
+        </div>
+
+        <div class="bg-gray-50 p-4 rounded-lg">
+          <h4 class="font-semibold text-gray-900 mb-1">AWS orientado a datos</h4>
+          <p class="text-sm text-gray-600">Udemy | Enero 2025</p>
+        </div>
+
+        <div class="bg-gray-50 p-4 rounded-lg">
+          <h4 class="font-semibold text-gray-900 mb-1">Neuromarketing: Neurociencia para crecer tu negocio</h4>
+          <p class="text-sm text-gray-600">Udemy | Febrero 2025</p>
+        </div>
+
+      </div>
+
+      <p class="text-sm text-gray-600 mt-4 text-center">
+        <a href="certificaciones.html" class="text-blue-600 hover:underline font-semibold">
+          + Ver las 16 certificaciones completas →
+        </a>
+      </p>
+    </div>
+
+    <!-- Idiomas -->
+    <div class="section">
+      <h2 class="section-title">
+        <i class="fas fa-language mr-2"></i> Idiomas
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="text-center">
+          <div class="text-2xl font-bold text-blue-600 mb-1">Español</div>
+          <p class="text-gray-600">Nativo</p>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl font-bold text-blue-600 mb-1">Inglés</div>
+          <p class="text-gray-600">B1 - Intermedio</p>
+          <p class="text-xs text-gray-500">Liceo Cultural Británico</p>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl font-bold text-blue-600 mb-1">Portugués</div>
+          <p class="text-gray-600">A1 - Básico</p>
+          <p class="text-xs text-gray-500">Aprenda Brasil</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Información Adicional -->
+    <div class="section">
+      <h2 class="section-title">
+        <i class="fas fa-info-circle mr-2"></i> Información Adicional
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h4 class="font-semibold text-gray-900 mb-2">
+            <i class="fas fa-map-marker-alt text-blue-600 mr-2"></i> Ubicación
+          </h4>
+          <p class="text-gray-700 text-sm">
+            Provincia de Buenos Aires, Argentina<br>
+            Disponibilidad: Presencial, Híbrido o Remoto
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-gray-900 mb-2">
+            <i class="fas fa-rocket text-purple-600 mr-2"></i> Objetivos Profesionales
+          </h4>
+          <p class="text-gray-700 text-sm">
+            Participar en proyectos desafiantes donde mis habilidades en ciencia de datos, 
+            marketing digital y automatización contribuyan al crecimiento empresarial e 
+            innovación basada en datos.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-8 mt-12 no-print">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <p class="mb-4">¿Interesado en trabajar juntos?</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="mailto:ortesancode@gmail.com" class="download-btn">
+          <i class="fas fa-envelope"></i> Contactar
+        </a>
+        <a href="index.html" class="print-btn" style="background: rgb(2, 6, 238);">
+          <i class="fas fa-folder-open"></i> Ver Portfolio Completo
+        </a>
+      </div>
+      <p class="text-gray-400 text-sm mt-6">&copy; 2025 Sandra Ortellado | Analista de Datos & Marketing Digital</p>
+    </div>
+  </footer>
+
+</body>
+</html>

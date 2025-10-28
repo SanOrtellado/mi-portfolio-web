@@ -33,7 +33,7 @@
     
     .cert-card { 
       background: rgba(255,255,255,0.08); 
-      padding: 1.5rem; 
+      padding: 1.25rem; 
       border-radius: 1rem; 
       transition: all 0.3s ease;
       border: 1px solid rgba(255,255,255,0.1);
@@ -47,65 +47,134 @@
     }
     
     .section-title {
-      font-size: 2rem;
+      font-size: 1.75rem;
       font-weight: 700;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       padding-bottom: 0.5rem;
       border-bottom: 3px solid var(--color-turquoise);
+    }
+
+    .nav-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .nav-button:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+    }
+
+    /* Mejoras responsive */
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      
+      .cert-card {
+        padding: 1rem;
+      }
+
+      .cert-card img {
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+      }
+
+      .cert-card h4 {
+        font-size: 1rem !important;
+        line-height: 1.4;
+      }
+
+      .cert-card p {
+        font-size: 0.875rem;
+      }
+
+      header h1 {
+        font-size: 1.25rem !important;
+      }
+
+      header nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      header ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem !important;
+      }
+
+      .nav-button {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.875rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .stats-number {
+        font-size: 2.5rem !important;
+      }
     }
   </style>
 </head>
 <body class="min-h-screen flex flex-col">
-  <header class="w-full py-6 shadow-lg">
-    <nav class="max-w-6xl mx-auto flex justify-between items-center px-6">
-      <h1 class="text-2xl font-bold text-white">Sandra Ortellado</h1>
-      <ul class="flex gap-6">
-        <li><a href="portfolio.html" class="hover:text-yellow-300 transition">← Volver al Portfolio</a></li>
+  <header class="w-full py-4 md:py-6 shadow-lg">
+    <nav class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center px-4 md:px-6 gap-3">
+      <h1 class="text-xl md:text-2xl font-bold text-white">Sandra Ortellado</h1>
+      <ul class="flex flex-wrap gap-2 md:gap-4 justify-center">
+        <li><a href="portfolio.html" class="nav-button"><i class="fas fa-home"></i> Portfolio</a></li>
+        <li><a href="blog.html" class="nav-button"><i class="fas fa-blog"></i> Blog</a></li>
+        <li><a href="CV - Sandra Ortellado _ Data Analyst & Marketing Digital.pdf" download class="nav-button bg-gradient-to-r from-purple-600 to-cyan-500"><i class="fas fa-download"></i> Descargar CV</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="max-w-6xl w-full px-6 mt-12 mb-12 mx-auto">
-    <div class="text-center mb-12">
-      <h2 class="text-5xl font-bold mb-4" style="color: var(--color-mint)">
+  <main class="max-w-6xl w-full px-4 md:px-6 mt-8 md:mt-12 mb-8 md:mb-12 mx-auto">
+    <div class="text-center mb-8 md:mb-12">
+      <h2 class="text-3xl md:text-5xl font-bold mb-3 md:mb-4" style="color: var(--color-mint)">
         <i class="fas fa-certificate"></i> Licencias y Certificaciones
       </h2>
-      <p class="text-xl text-gray-300">
+      <p class="text-base md:text-xl text-gray-300 px-4">
         Más de 400 horas de aprendizaje continuo en Data Science, Marketing Digital y Tecnología
       </p>
     </div>
 
     <!-- Estadísticas -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
       <div class="cert-card text-center">
-        <div class="text-5xl font-bold mb-2" style="color: var(--color-turquoise)">11+</div>
-        <p class="text-gray-200">Certificaciones</p>
+        <div class="stats-number text-4xl md:text-5xl font-bold mb-2" style="color: var(--color-turquoise)">16+</div>
+        <p class="text-sm md:text-base text-gray-200">Certificaciones</p>
       </div>
       <div class="cert-card text-center">
-        <div class="text-5xl font-bold mb-2" style="color: var(--color-mustard)">400+</div>
-        <p class="text-gray-200">Horas de Estudio</p>
+        <div class="stats-number text-4xl md:text-5xl font-bold mb-2" style="color: var(--color-mustard)">500+</div>
+        <p class="text-sm md:text-base text-gray-200">Horas de Estudio</p>
       </div>
       <div class="cert-card text-center">
-        <div class="text-5xl font-bold mb-2" style="color: var(--color-purple)">2025</div>
-        <p class="text-gray-200">Última Actualización</p>
+        <div class="stats-number text-4xl md:text-5xl font-bold mb-2" style="color: var(--color-purple)">2025</div>
+        <p class="text-sm md:text-base text-gray-200">Última Actualización</p>
       </div>
     </div>
 
-    <!-- Certificaciones de Gestión de Proyectos -->
-    <div class="mb-12">
-      <h3 class="section-title" style="color: var(--color-purple)">
-        <i class="fas fa-tasks"></i> Gestión de Proyectos & IA
+    <!-- Certificaciones de Marketing Digital -->
+    <div class="mb-8 md:mb-12">
+      <h3 class="section-title" style="color: var(--color-mustard)">
+        <i class="fas fa-bullhorn"></i> Marketing Digital & Conversión
       </h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         
         <div class="cert-card">
-          <div class="flex items-start gap-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg" alt="Udemy" class="w-12 h-12">
+          <div class="flex items-start gap-3 md:gap-4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg" alt="Udemy" class="w-10 h-10 md:w-12 md:h-12">
             <div class="flex-1">
-              <h4 class="text-xl font-semibold mb-2">Jira: Gestiona proyectos corporativos de forma ágil</h4>
-              <p class="text-gray-300 mb-2">Udemy | Febrero 2025</p>
-              <p class="text-sm text-gray-400 mb-3">Gestión de proyectos · Metodologías ágiles</p>
-              <a href="https://www.udemy.com/certificate/UC-a387bc44-e9fe-4bc8-a763-0202713cfc9b/" target="_blank" class="text-cyan-300 hover:underline">
+              <h4 class="text-lg md:text-xl font-semibold mb-2">Curso de Branding - Marca, Logotipo, Naming, Marketing, Logo</h4>
+              <p class="text-sm md:text-base text-gray-300 mb-2">Udemy | Febrero 2025</p>
+              <p class="text-xs md:text-sm text-gray-400 mb-3">Branding · Identidad de marca · Naming · Logo design</p>
+              <a href="https://www.udemy.com/certificate/UC-ca34ad6f-5829-4255-8799-0a2abfc4a393/" target="_blank" class="text-cyan-300 hover:underline text-sm md:text-base">
                 Ver credencial →
               </a>
             </div>
@@ -113,13 +182,93 @@
         </div>
 
         <div class="cert-card">
-          <div class="flex items-start gap-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg" alt="Udemy" class="w-12 h-12">
+          <div class="flex items-start gap-3 md:gap-4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg" alt="Udemy" class="w-10 h-10 md:w-12 md:h-12">
             <div class="flex-1">
-              <h4 class="text-xl font-semibold mb-2">Gestión de Proyectos Inteligente con IA y ChatGPT</h4>
-              <p class="text-gray-300 mb-2">Udemy | Enero 2025</p>
-              <p class="text-sm text-gray-400 mb-3">IA para negocios · Gestión de proyectos</p>
-              <a href="https://www.udemy.com/certificate/UC-03affa9b-a702-4803-875a-7e9ca4c8d71b/" target="_blank" class="text-cyan-300 hover:underline">
+              <h4 class="text-lg md:text-xl font-semibold mb-2">Curso completo de Inbound Marketing con técnicas actuales</h4>
+              <p class="text-sm md:text-base text-gray-300 mb-2">Udemy | Febrero 2025</p>
+              <p class="text-xs md:text-sm text-gray-400 mb-3">Inbound Marketing · Content Marketing · Lead Generation</p>
+              <a href="https://www.udemy.com/certificate/UC-555d0493-f88a-4487-a4fb-a9c1330f0a04/" target="_blank" class="text-cyan-300 hover:underline text-sm md:text-base">
+                Ver credencial →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="flex items-start gap-3 md:gap-4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg" alt="Udemy" class="w-10 h-10 md:w-12 md:h-12">
+            <div class="flex-1">
+              <h4 class="text-lg md:text-xl font-semibold mb-2">Neuromarketing: Neurociencia aplicada para crecer tu negocio</h4>
+              <p class="text-sm md:text-base text-gray-300 mb-2">Udemy | Febrero 2025</p>
+              <p class="text-xs md:text-sm text-gray-400 mb-3">Neuromarketing · Psicología del consumidor · Marketing estratégico</p>
+              <a href="https://www.udemy.com/certificate/UC-9c33bf9e-8c15-4a57-addf-9fa2e27dfa01/" target="_blank" class="text-cyan-300 hover:underline text-sm md:text-base">
+                Ver credencial →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="flex items-start gap-3 md:gap-4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg" alt="Udemy" class="w-10 h-10 md:w-12 md:h-12">
+            <div class="flex-1">
+              <h4 class="text-lg md:text-xl font-semibold mb-2">Clickfunnels: Como Crear Embudos de Venta de Alta Conversión</h4>
+              <p class="text-sm md:text-base text-gray-300 mb-2">Udemy | Febrero 2025</p>
+              <p class="text-xs md:text-sm text-gray-400 mb-3">Embudos de venta · Conversión · Marketing automation</p>
+              <a href="https://www.udemy.com/certificate/UC-3140fad4-5e91-455b-bad2-b10f5478d3a5/" target="_blank" class="text-cyan-300 hover:underline text-sm md:text-base">
+                Ver credencial →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="flex items-start gap-3 md:gap-4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg" alt="Udemy" class="w-10 h-10 md:w-12 md:h-12">
+            <div class="flex-1">
+              <h4 class="text-lg md:text-xl font-semibold mb-2">Google Ads (Adwords) - 0% Humo - CONVIERTE más con SEM</h4>
+              <p class="text-sm md:text-base text-gray-300 mb-2">Udemy | Febrero 2025</p>
+              <p class="text-xs md:text-sm text-gray-400 mb-3">Google Ads · SEM · PPC · Publicidad digital</p>
+              <a href="https://www.udemy.com/certificate/UC-a96b28b9-1aaa-4899-9271-5cc8130eb2a1/" target="_blank" class="text-cyan-300 hover:underline text-sm md:text-base">
+                Ver credencial →
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Certificaciones de Gestión de Proyectos -->
+    <div class="mb-8 md:mb-12">
+      <h3 class="section-title" style="color: var(--color-purple)">
+        <i class="fas fa-tasks"></i> Gestión de Proyectos & IA
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+        
+        <div class="cert-card">
+          <div class="flex items-start gap-3 md:gap-4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg" alt="Udemy" class="w-10 h-10 md:w-12 md:h-12">
+            <div class="flex-1">
+              <h4 class="text-lg md:text-xl font-semibold mb-2">Jira: Gestiona proyectos corporativos de forma ágil</h4>
+              <p class="text-sm md:text-base text-gray-300 mb-2">Udemy | Febrero 2025</p>
+              <p class="text-xs md:text-sm text-gray-400 mb-3">Gestión de proyectos · Metodologías ágiles</p>
+              <a href="https://www.udemy.com/certificate/UC-a387bc44-e9fe-4bc8-a763-0202713cfc9b/" target="_blank" class="text-cyan-300 hover:underline text-sm md:text-base">
+                Ver credencial →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="flex items-start gap-3 md:gap-4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg" alt="Udemy" class="w-10 h-10 md:w-12 md:h-12">
+            <div class="flex-1">
+              <h4 class="text-lg md:text-xl font-semibold mb-2">Gestión de Proyectos Inteligente con IA y ChatGPT</h4>
+              <p class="text-sm md:text-base text-gray-300 mb-2">Udemy | Enero 2025</p>
+              <p class="text-xs md:text-sm text-gray-400 mb-3">IA para negocios · Gestión de proyectos</p>
+              <a href="https://www.udemy.com/certificate/UC-03affa9b-a702-4803-875a-7e9ca4c8d71b/" target="_blank" class="text-cyan-300 hover:underline text-sm md:text-base">
                 Ver credencial →
               </a>
             </div>
@@ -130,20 +279,20 @@
     </div>
 
     <!-- Certificaciones de Data Science & Analytics -->
-    <div class="mb-12">
+    <div class="mb-8 md:mb-12">
       <h3 class="section-title" style="color: var(--color-turquoise)">
         <i class="fas fa-chart-line"></i> Data Science & Analytics
       </h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         
         <div class="cert-card">
-          <div class="flex items-start gap-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg" alt="Udemy" class="w-12 h-12">
+          <div class="flex items-start gap-3 md:gap-4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg" alt="Udemy" class="w-10 h-10 md:w-12 md:h-12">
             <div class="flex-1">
-              <h4 class="text-xl font-semibold mb-2">AWS orientado a datos</h4>
-              <p class="text-gray-300 mb-2">Udemy | Enero 2025</p>
-              <p class="text-sm text-gray-400 mb-3">AWS · Cloud Computing · Análisis estratégico de datos</p>
-              <a href="https://www.udemy.com/certificate/UC-495c47d3-d3ce-4049-af0e-c850026f45a9/" target="_blank" class="text-cyan-300 hover:underline">
+              <h4 class="text-lg md:text-xl font-semibold mb-2">AWS orientado a datos</h4>
+              <p class="text-sm md:text-base text-gray-300 mb-2">Udemy | Enero 2025</p>
+              <p class="text-xs md:text-sm text-gray-400 mb-3">AWS · Cloud Computing · Análisis estratégico de datos</p>
+              <a href="https://www.udemy.com/certificate/UC-495c47d3-d3ce-4049-af0e-c850026f45a9/" target="_blank" class="text-cyan-300 hover:underline text-sm md:text-base">
                 Ver credencial →
               </a>
             </div>
@@ -151,13 +300,13 @@
         </div>
 
         <div class="cert-card">
-          <div class="flex items-start gap-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg" alt="Udemy" class="w-12 h-12">
+          <div class="flex items-start gap-3 md:gap-4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg" alt="Udemy" class="w-10 h-10 md:w-12 md:h-12">
             <div class="flex-1">
-              <h4 class="text-xl font-semibold mb-2">Machine Learning y Data Science con Python</h4>
-              <p class="text-gray-300 mb-2">Udemy | Enero 2025</p>
-              <p class="text-sm text-gray-400 mb-3">Machine Learning · Python · IA para negocios · Ciencia de datos</p>
-              <a href="https://www.udemy.com/certificate/UC-340165ac-6436-41bb-aa6f-133f1e8a1507/" target="_blank" class="text-cyan-300 hover:underline">
+              <h4 class="text-lg md:text-xl font-semibold mb-2">Machine Learning y Data Science con Python</h4>
+              <p class="text-sm md:text-base text-gray-300 mb-2">Udemy | Enero 2025</p>
+              <p class="text-xs md:text-sm text-gray-400 mb-3">Machine Learning · Python · IA para negocios · Ciencia de datos</p>
+              <a href="https://www.udemy.com/certificate/UC-340165ac-6436-41bb-aa6f-133f1e8a1507/" target="_blank" class="text-cyan-300 hover:underline text-sm md:text-base">
                 Ver credencial →
               </a>
             </div>
@@ -165,13 +314,13 @@
         </div>
 
         <div class="cert-card">
-          <div class="flex items-start gap-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg" alt="Udemy" class="w-12 h-12">
+          <div class="flex items-start gap-3 md:gap-4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg" alt="Udemy" class="w-10 h-10 md:w-12 md:h-12">
             <div class="flex-1">
-              <h4 class="text-xl font-semibold mb-2">Power BI - Analista de Datos Avanzado</h4>
-              <p class="text-gray-300 mb-2">Udemy | Diciembre 2024</p>
-              <p class="text-sm text-gray-400 mb-3">Microsoft Power BI · DAX · Visualización de datos</p>
-              <a href="https://www.udemy.com/certificate/UC-46e689ac-0862-4a40-b75b-eba442540be3/" target="_blank" class="text-cyan-300 hover:underline">
+              <h4 class="text-lg md:text-xl font-semibold mb-2">Power BI - Analista de Datos Avanzado</h4>
+              <p class="text-sm md:text-base text-gray-300 mb-2">Udemy | Diciembre 2024</p>
+              <p class="text-xs md:text-sm text-gray-400 mb-3">Microsoft Power BI · DAX · Visualización de datos</p>
+              <a href="https://www.udemy.com/certificate/UC-46e689ac-0862-4a40-b75b-eba442540be3/" target="_blank" class="text-cyan-300 hover:underline text-sm md:text-base">
                 Ver credencial →
               </a>
             </div>
@@ -179,13 +328,13 @@
         </div>
 
         <div class="cert-card">
-          <div class="flex items-start gap-4">
-            <img src="it.jpeg" alt="EducacionIT" class="w-12 h-12 bg-blue-600 rounded">
+          <div class="flex items-start gap-3 md:gap-4">
+            <img src="it.jpeg" alt="EducacionIT" class="w-10 h-10 md:w-12 md:h-12 bg-blue-600 rounded">
             <div class="flex-1">
-              <h4 class="text-xl font-semibold mb-2">Power BI - Curso de Análisis y Visualización</h4>
-              <p class="text-gray-300 mb-2">EducacionIT | Diciembre 2024</p>
-              <p class="text-sm text-gray-400 mb-3">Power BI · Visualización de datos · Reportes interactivos</p>
-              <a href="https://www.educacionit.com/perfil/sandra-ortellado-861724/certificado/62280" target="_blank" class="text-cyan-300 hover:underline">
+              <h4 class="text-lg md:text-xl font-semibold mb-2">Power BI - Curso de Análisis y Visualización</h4>
+              <p class="text-sm md:text-base text-gray-300 mb-2">EducacionIT | Diciembre 2024</p>
+              <p class="text-xs md:text-sm text-gray-400 mb-3">Power BI · Visualización de datos · Reportes interactivos</p>
+              <a href="https://www.educacionit.com/perfil/sandra-ortellado-861724/certificado/62280" target="_blank" class="text-cyan-300 hover:underline text-sm md:text-base">
                 Ver credencial →
               </a>
             </div>
@@ -193,13 +342,13 @@
         </div>
 
         <div class="cert-card">
-          <div class="flex items-start gap-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg" alt="Udemy" class="w-12 h-12">
+          <div class="flex items-start gap-3 md:gap-4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg" alt="Udemy" class="w-10 h-10 md:w-12 md:h-12">
             <div class="flex-1">
-              <h4 class="text-xl font-semibold mb-2">Data Governance: Los Metadatos en el Gobierno del Dato</h4>
-              <p class="text-gray-300 mb-2">Udemy | Diciembre 2024</p>
-              <p class="text-sm text-gray-400 mb-3">Data Governance · Metadatos · Administración de datos</p>
-              <a href="https://www.udemy.com/certificate/UC-14a6d58c-c107-482d-9ace-256b523a4d83/" target="_blank" class="text-cyan-300 hover:underline">
+              <h4 class="text-lg md:text-xl font-semibold mb-2">Data Governance: Los Metadatos en el Gobierno del Dato</h4>
+              <p class="text-sm md:text-base text-gray-300 mb-2">Udemy | Diciembre 2024</p>
+              <p class="text-xs md:text-sm text-gray-400 mb-3">Data Governance · Metadatos · Administración de datos</p>
+              <a href="https://www.udemy.com/certificate/UC-14a6d58c-c107-482d-9ace-256b523a4d83/" target="_blank" class="text-cyan-300 hover:underline text-sm md:text-base">
                 Ver credencial →
               </a>
             </div>
@@ -207,13 +356,13 @@
         </div>
 
         <div class="cert-card">
-          <div class="flex items-start gap-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg" alt="Udemy" class="w-12 h-12">
+          <div class="flex items-start gap-3 md:gap-4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg" alt="Udemy" class="w-10 h-10 md:w-12 md:h-12">
             <div class="flex-1">
-              <h4 class="text-xl font-semibold mb-2">Curso Excel - Fórmulas, tablas dinámicas y dashboards</h4>
-              <p class="text-gray-300 mb-2">Udemy | Diciembre 2024</p>
-              <p class="text-sm text-gray-400 mb-3">Microsoft Excel · Tablas dinámicas · Dashboards</p>
-              <a href="https://www.udemy.com/certificate/UC-3c38dad8-1893-436d-9913-a5f95994645a/" target="_blank" class="text-cyan-300 hover:underline">
+              <h4 class="text-lg md:text-xl font-semibold mb-2">Curso Excel - Fórmulas, tablas dinámicas y dashboards</h4>
+              <p class="text-sm md:text-base text-gray-300 mb-2">Udemy | Diciembre 2024</p>
+              <p class="text-xs md:text-sm text-gray-400 mb-3">Microsoft Excel · Tablas dinámicas · Dashboards</p>
+              <a href="https://www.udemy.com/certificate/UC-3c38dad8-1893-436d-9913-a5f95994645a/" target="_blank" class="text-cyan-300 hover:underline text-sm md:text-base">
                 Ver credencial →
               </a>
             </div>
@@ -221,13 +370,13 @@
         </div>
 
         <div class="cert-card">
-          <div class="flex items-start gap-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg" alt="Udemy" class="w-12 h-12">
+          <div class="flex items-start gap-3 md:gap-4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg" alt="Udemy" class="w-10 h-10 md:w-12 md:h-12">
             <div class="flex-1">
-              <h4 class="text-xl font-semibold mb-2">SQL - Curso completo de Bases de Datos - de 0 a Avanzado</h4>
-              <p class="text-gray-300 mb-2">Udemy | Diciembre 2024</p>
-              <p class="text-sm text-gray-400 mb-3">SQL · SQL Server Reporting Services (SSRS) · Bases de datos</p>
-              <a href="https://www.udemy.com/certificate/UC-9ebfb277-b8ad-4775-addf-9a18dcf5d5fe/" target="_blank" class="text-cyan-300 hover:underline">
+              <h4 class="text-lg md:text-xl font-semibold mb-2">SQL - Curso completo de Bases de Datos - de 0 a Avanzado</h4>
+              <p class="text-sm md:text-base text-gray-300 mb-2">Udemy | Diciembre 2024</p>
+              <p class="text-xs md:text-sm text-gray-400 mb-3">SQL · SQL Server Reporting Services (SSRS) · Bases de datos</p>
+              <a href="https://www.udemy.com/certificate/UC-9ebfb277-b8ad-4775-addf-9a18dcf5d5fe/" target="_blank" class="text-cyan-300 hover:underline text-sm md:text-base">
                 Ver credencial →
               </a>
             </div>
@@ -235,13 +384,13 @@
         </div>
 
         <div class="cert-card">
-          <div class="flex items-start gap-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg" alt="Udemy" class="w-12 h-12">
+          <div class="flex items-start gap-3 md:gap-4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg" alt="Udemy" class="w-10 h-10 md:w-12 md:h-12">
             <div class="flex-1">
-              <h4 class="text-xl font-semibold mb-2">Curso SAP SD - Ventas y distribución</h4>
-              <p class="text-gray-300 mb-2">Udemy | Diciembre 2024</p>
-              <p class="text-sm text-gray-400 mb-3">SAP SD · Sales Effectiveness · Gestión comercial</p>
-              <a href="https://www.udemy.com/certificate/UC-ee546125-e5a5-4829-a799-a22afd7b1250/" target="_blank" class="text-cyan-300 hover:underline">
+              <h4 class="text-lg md:text-xl font-semibold mb-2">Curso SAP SD - Ventas y distribución</h4>
+              <p class="text-sm md:text-base text-gray-300 mb-2">Udemy | Diciembre 2024</p>
+              <p class="text-xs md:text-sm text-gray-400 mb-3">SAP SD · Sales Effectiveness · Gestión comercial</p>
+              <a href="https://www.udemy.com/certificate/UC-ee546125-e5a5-4829-a799-a22afd7b1250/" target="_blank" class="text-cyan-300 hover:underline text-sm md:text-base">
                 Ver credencial →
               </a>
             </div>
@@ -252,19 +401,22 @@
     </div>
 
     <!-- Call to Action -->
-    <div class="cert-card text-center mt-12">
-      <h3 class="text-2xl font-bold mb-4" style="color: var(--color-mint)">
+    <div class="cert-card text-center mt-8 md:mt-12">
+      <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4" style="color: var(--color-mint)">
         <i class="fas fa-rocket"></i> Siempre aprendiendo
       </h3>
-      <p class="text-lg text-gray-300 mb-6">
+      <p class="text-base md:text-lg text-gray-300 mb-4 md:mb-6 px-2">
         Esta es solo una muestra de mi compromiso con el aprendizaje continuo. 
         Cada curso es una nueva herramienta para transformar datos en decisiones inteligentes.
       </p>
-      <div class="flex gap-4 justify-center flex-wrap">
-        <a href="portfolio.html" class="bg-gradient-to-r from-purple-600 to-cyan-500 px-8 py-3 rounded-full font-bold hover:opacity-90 transition">
+      <div class="flex gap-3 md:gap-4 justify-center flex-wrap px-2">
+        <a href="portfolio.html" class="bg-gradient-to-r from-purple-600 to-cyan-500 px-6 md:px-8 py-2 md:py-3 rounded-full font-bold hover:opacity-90 transition text-sm md:text-base">
           <i class="fas fa-arrow-left"></i> Volver al Portfolio
         </a>
-        <a href="mailto:ortesancode@gmail.com" class="bg-white/10 hover:bg-white/20 px-8 py-3 rounded-full font-bold transition">
+        <a href="Blog.html" class="bg-white/10 hover:bg-white/20 px-6 md:px-8 py-2 md:py-3 rounded-full font-bold transition text-sm md:text-base">
+          <i class="fas fa-blog"></i> Ver Blog
+        </a>
+        <a href="mailto:ortesancode@gmail.com" class="bg-white/10 hover:bg-white/20 px-6 md:px-8 py-2 md:py-3 rounded-full font-bold transition text-sm md:text-base">
           <i class="fas fa-envelope"></i> Contactar
         </a>
       </div>
@@ -272,8 +424,8 @@
 
   </main>
 
-  <footer class="mt-auto py-6 text-center border-t border-white/20 w-full">
-    <p class="text-gray-300">&copy; 2025 Sandra Ortellado | Analista de Datos & Marketing</p>
+  <footer class="mt-auto py-4 md:py-6 text-center border-t border-white/20 w-full">
+    <p class="text-sm md:text-base text-gray-300">&copy; 2025 Sandra Ortellado | Analista de Datos & Marketing Digital</p>
   </footer>
 </body>
 </html>
