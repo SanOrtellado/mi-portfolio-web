@@ -293,130 +293,286 @@
       padding: 2rem 0;
       margin-top: 4rem;
     }
+    
     /* === AJUSTES RESPONSIVE === */
 
-/* 📱 Tablets (pantallas medianas, hasta 992px) */
-@media (max-width: 992px) {
-  header, main, footer {
-    padding: 1rem 1.5rem;
-  }
+    /* 📱 Tablets (pantallas medianas, hasta 992px) */
+    @media (max-width: 992px) {
+      header, main, footer {
+        padding: 1rem 1.5rem;
+      }
 
-  .contenedor, .section, .about, .portfolio, .contacto {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+      .contenedor, .section, .about, .portfolio, .contacto {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
 
-  img {
-    max-width: 100%;
-    height: auto;
-  }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
 
-  nav ul {
-    flex-direction: column;
-    gap: 1rem;
-  }
-}
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
 
-/* 📱 Celulares (pantallas pequeñas, hasta 600px) */
-@media (max-width: 600px) {
-  body {
-    font-size: 0.95rem;
-  }
+    /* 📱 Celulares (pantallas pequeñas, hasta 600px) */
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.95rem;
+      }
 
-  h1 {
-    font-size: 1.6rem;
-  }
+      h1 {
+        font-size: 1.6rem;
+      }
 
-  h2 {
-    font-size: 1.3rem;
-  }
+      h2 {
+        font-size: 1.3rem;
+      }
 
-  header {
-    flex-direction: column;
-    align-items: center;
-  }
+      header {
+        flex-direction: column;
+        align-items: center;
+      }
 
-  .hero, .about, .portfolio, .contacto {
-    padding: 1.5rem 1rem;
-    width: 100%;
-  }
+      .hero, .about, .portfolio, .contacto {
+        padding: 1.5rem 1rem;
+        width: 100%;
+      }
 
-  .card, .project, .skill {
-    width: 100%;
-    margin-bottom: 1rem;
-  }
+      .card, .project, .skill {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
 
-  button, .btn {
-    width: 100%;
-  }
-}
-/* ===== Ajustes específicos para la sección hero ===== */
+      button, .btn {
+        width: 100%;
+      }
+    }
+    
+    /* ===== Ajustes específicos para la sección hero ===== */
 
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
-  padding: 2rem 4rem;
-}
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+      padding: 2rem 4rem;
+    }
 
-.hero-text {
-  flex: 1;
-  min-width: 280px;
-}
+    .hero-text {
+      flex: 1;
+      min-width: 280px;
+    }
 
-.hero-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-.hero-image img {
-  max-width: 220px;
-  height: auto;
-  border-radius: 50%;
-  border: 3px solid #6A5ACD; /* podés ajustar el color al tuyo */
-}
+    .hero-image img {
+      max-width: 220px;
+      height: auto;
+      border-radius: 50%;
+      border: 3px solid #6A5ACD;
+    }
 
-/* 📱 Pantallas pequeñas */
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 1.5rem;
-  }
+    /* 📱 Pantallas pequeñas */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem;
+      }
 
-  .hero-text {
-    order: 1;
-  }
+      .hero-text {
+        order: 1;
+      }
 
-  .hero-image {
-    order: 2;
-    margin-top: 1.5rem;
-  }
+      .hero-image {
+        order: 2;
+        margin-top: 1.5rem;
+      }
 
-  .hero-image img {
-    max-width: 180px;
-  }
+      .hero-image img {
+        max-width: 180px;
+      }
 
-  .hero-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-    align-items: center;
-  }
+      .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: center;
+      }
 
-  .hero-buttons a {
-    width: 80%;
-    max-width: 260px;
-  }
-}
+      .hero-buttons a {
+        width: 80%;
+        max-width: 260px;
+      }
+    }
 
+    /* ========== MENÚ HAMBURGUESA RESPONSIVE ========== */
 
+    /* Botón hamburguesa - oculto por defecto */
+    .menu-toggle {
+      display: none;
+      position: fixed;
+      top: 1.5rem;
+      right: 1.5rem;
+      z-index: 1001;
+      background: linear-gradient(135deg, var(--color-purple), var(--color-turquoise));
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      cursor: pointer;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s;
+    }
+
+    .menu-toggle:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(168, 85, 247, 0.5);
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: white;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* Animación del botón cuando está activo */
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    /* Overlay oscuro */
+    .menu-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 998;
+      backdrop-filter: blur(5px);
+    }
+
+    .menu-overlay.active {
+      display: block;
+    }
+
+    /* Responsive para pantallas pequeñas */
+    @media (max-width: 768px) {
+      /* Mostrar botón hamburguesa */
+      .menu-toggle {
+        display: flex;
+      }
+
+      /* Header ajustado */
+      header nav {
+        padding: 1rem 1.5rem;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+        position: relative;
+        z-index: 999;
+      }
+
+      /* Menú oculto por defecto en móvil */
+      header nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: linear-gradient(180deg, var(--color-darker) 0%, var(--color-dark) 100%);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 2rem;
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 999;
+        overflow-y: auto;
+      }
+
+      /* Menú visible cuando está activo */
+      header nav ul.active {
+        right: 0;
+      }
+
+      /* Links del menú en móvil */
+      header nav ul li {
+        width: 100%;
+        text-align: center;
+      }
+
+      header nav ul li a {
+        display: block;
+        padding: 1rem;
+        font-size: 1.1rem;
+        border-radius: 10px;
+        transition: all 0.3s;
+      }
+
+      header nav ul li a:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateX(-5px);
+      }
+
+      /* Animación de entrada de los items */
+      header nav ul.active li {
+        animation: slideIn 0.3s ease-out forwards;
+        opacity: 0;
+      }
+
+      header nav ul.active li:nth-child(1) { animation-delay: 0.1s; }
+      header nav ul.active li:nth-child(2) { animation-delay: 0.15s; }
+      header nav ul.active li:nth-child(3) { animation-delay: 0.2s; }
+      header nav ul.active li:nth-child(4) { animation-delay: 0.25s; }
+      header nav ul.active li:nth-child(5) { animation-delay: 0.3s; }
+      header nav ul.active li:nth-child(6) { animation-delay: 0.35s; }
+      header nav ul.active li:nth-child(7) { animation-delay: 0.4s; }
+      header nav ul.active li:nth-child(8) { animation-delay: 0.45s; }
+      header nav ul.active li:nth-child(9) { animation-delay: 0.5s; }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    }
   </style>
 </head>
 <body>
@@ -497,7 +653,6 @@
              (no en corazonadas 😉).
               </p>
               <p class="text-lg text-gray-100 leading-relaxed">
-              </p>
                 Estoy cursando la <strong style="color: var(--color-mustard)">Licenciatura en Ciencias de Datos</strong> en Universidad Siglo 21, 
                 porque nunca paro de aprender. Cada proyecto es una oportunidad para combinar análisis, 
                 tecnología y un toque de creatividad.
@@ -522,51 +677,48 @@
                    <strong style="color: var(--color-mint)">Mailo</strong>,
                     mi gato, quien es experto en interrumpir videollamadas y hacer code reviews
                     (aunque solo entiende de siestas 😺).
-      </p>
+              </p>
+            </div>
           </div>
         </div>
 
-
-
-    
         <div class="glass-card mt-12">
-  <h3 class="text-2xl font-bold mb-8 text-center" style="color: var(--color-lavender)">
-    💼 Mi filosofía de trabajo
-  </h3>
-<div class="grid md:grid-cols-3 gap-6">
+          <h3 class="text-2xl font-bold mb-8 text-center" style="color: var(--color-lavender)">
+            💼 Mi filosofía de trabajo
+          </h3>
+          <div class="grid md:grid-cols-3 gap-6">
 
-  <div class="text-center">
-  <img src="proctive.jpeg" alt="Enfoque proactivo" 
-       class="mx-auto mb-3 w-20 h-20 object-contain">
-  <h4 class="font-bold mb-2">Enfoque proactivo</h4>
-  <p class="text-gray-300">
-    Anticipo necesidades y resuelvo problemas antes de que se conviertan en crisis.
-  </p>
-</div>
+            <div class="text-center">
+              <img src="proctive.jpeg" alt="Enfoque proactivo" 
+                   class="mx-auto mb-3 w-20 h-20 object-contain">
+              <h4 class="font-bold mb-2">Enfoque proactivo</h4>
+              <p class="text-gray-300">
+                Anticipo necesidades y resuelvo problemas antes de que se conviertan en crisis.
+              </p>
+            </div>
 
-<div class="text-center">
-  <img src="metrica.jpeg" alt="Resultados medibles" 
-       class="mx-auto mb-3 w-20 h-20 object-contain">
-  <h4 class="font-bold mb-2">Resultados medibles</h4>
-  <p class="text-gray-300">
-    Si no se puede medir, no se puede mejorar. Los datos no mienten.
-  </p>
-</div>
+            <div class="text-center">
+              <img src="metrica.jpeg" alt="Resultados medibles" 
+                   class="mx-auto mb-3 w-20 h-20 object-contain">
+              <h4 class="font-bold mb-2">Resultados medibles</h4>
+              <p class="text-gray-300">
+                Si no se puede medir, no se puede mejorar. Los datos no mienten.
+              </p>
+            </div>
 
-<div class="text-center">
-  <img src="aprendizaje.png" alt="Aprendizaje continuo" 
-       class="mx-auto mb-3 w-20 h-20 object-contain">
-  <h4 class="font-bold mb-2">Aprendizaje continuo</h4>
-  <p class="text-gray-300">
-    La tecnología evoluciona rápido, yo también. Siempre hay algo nuevo por descubrir.
-  </p>
-</div>
+            <div class="text-center">
+              <img src="aprendizaje.png" alt="Aprendizaje continuo" 
+                   class="mx-auto mb-3 w-20 h-20 object-contain">
+              <h4 class="font-bold mb-2">Aprendizaje continuo</h4>
+              <p class="text-gray-300">
+                La tecnología evoluciona rápido, yo también. Siempre hay algo nuevo por descubrir.
+              </p>
+            </div>
 
-
-</div>
-
-</div>
-
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Proyectos -->
     <main id="proyectos" class="py-16 px-6">
@@ -922,6 +1074,61 @@
         link.classList.remove('text-white');
         if (link.getAttribute('href').slice(1) === current) {
           link.classList.add('text-white');
+        }
+      });
+    });
+
+    // ========== MENÚ HAMBURGUESA ========== 
+    document.addEventListener('DOMContentLoaded', function() {
+      // Crear botón hamburguesa
+      const menuBtn = document.createElement('button');
+      menuBtn.className = 'menu-toggle';
+      menuBtn.setAttribute('aria-label', 'Menú');
+      menuBtn.innerHTML = '<span></span><span></span><span></span>';
+      document.body.appendChild(menuBtn);
+
+      // Crear overlay
+      const overlay = document.createElement('div');
+      overlay.className = 'menu-overlay';
+      document.body.appendChild(overlay);
+
+      const navMenu = document.querySelector('header nav ul');
+
+      // Toggle menú
+      menuBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        menuBtn.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        overlay.classList.toggle('active');
+        document.body.style.overflow = menuBtn.classList.contains('active') ? 'hidden' : '';
+      });
+
+      // Cerrar al hacer click en overlay
+      overlay.addEventListener('click', function() {
+        menuBtn.classList.remove('active');
+        navMenu.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+
+      // Cerrar al hacer click en un link
+      const navLinksMenu = document.querySelectorAll('header nav ul li a');
+      navLinksMenu.forEach(link => {
+        link.addEventListener('click', function() {
+          menuBtn.classList.remove('active');
+          navMenu.classList.remove('active');
+          overlay.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      });
+
+      // Cerrar con tecla ESC
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+          menuBtn.classList.remove('active');
+          navMenu.classList.remove('active');
+          overlay.classList.remove('active');
+          document.body.style.overflow = '';
         }
       });
     });
