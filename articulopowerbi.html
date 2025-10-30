@@ -354,24 +354,107 @@
     </article>
 
     <!-- Compartir y navegación -->
-    <div class="mt-8 flex flex-wrap gap-4 justify-between items-center" style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 1rem;">
-      <div>
-        <p class="text-sm text-gray-400 mb-2">Compartir este artículo:</p>
-        <div class="flex gap-3">
-          <button class="bg-white/10 hover:bg-white/20 w-10 h-10 rounded-full transition flex items-center justify-center">
-            <i class="fab fa-linkedin"></i>
-          </button>
-          <button class="bg-white/10 hover:bg-white/20 w-10 h-10 rounded-full transition flex items-center justify-center">
-            <i class="fab fa-twitter"></i>
-          </button>
-          <button class="bg-white/10 hover:bg-white/20 w-10 h-10 rounded-full transition flex items-center justify-center">
-            <i class="fas fa-link"></i>
-          </button>
-        </div>
-      </div>
-      <a href="blog.html" class="bg-gradient-to-r from-purple-600 to-cyan-500 px-6 py-3 rounded-full font-bold hover:opacity-90 transition">
-        <i class="fas fa-arrow-left mr-2"></i> Ver más artículos
+    <!-- En <head>: Font Awesome + Open Graph para vista previa linda al compartir -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta property="og:title" content="Mi Portfolio – Sandra Ortellado">
+<meta property="og:description" content="Data/BI & Marketing · Python · SQL · Power BI · Dashboards y automatización.">
+<meta property="og:image" content="https://san-data.vercel.app/assets/og-image.jpg">
+<meta property="og:url" content="https://san-data.vercel.app/portfolio.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Compartir y navegación -->
+<div class="mt-8 flex flex-wrap gap-4 justify-between items-center" style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 1rem;">
+  <div>
+    <p class="text-sm text-gray-400 mb-2">Compartir este artículo:</p>
+
+    <div class="flex flex-wrap gap-3">
+      <!-- LinkedIn -->
+      <a id="shareLinkedIn" class="w-10 h-10 rounded-full transition flex items-center justify-center"
+         style="background: linear-gradient(90deg, var(--color-purple), var(--color-cyan)); opacity:.9;"
+         title="Compartir en LinkedIn" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in text-white"></i>
       </a>
+
+      <!-- X/Twitter -->
+      <a id="shareTwitter" class="bg-white/10 hover:bg-white/20 w-10 h-10 rounded-full transition flex items-center justify-center"
+         title="Compartir en X" target="_blank" rel="noopener">
+        <i class="fab fa-x-twitter"></i>
+      </a>
+
+      <!-- WhatsApp -->
+      <a id="shareWhatsApp" class="bg-white/10 hover:bg-white/20 w-10 h-10 rounded-full transition flex items-center justify-center"
+         title="Compartir por WhatsApp" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+
+      <!-- Facebook (opcional) -->
+      <a id="shareFacebook" class="bg-white/10 hover:bg-white/20 w-10 h-10 rounded-full transition flex items-center justify-center"
+         title="Compartir en Facebook" target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+
+      <!-- Email -->
+      <a id="shareEmail" class="bg-white/10 hover:bg-white/20 w-10 h-10 rounded-full transition flex items-center justify-center"
+         title="Enviar por Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+
+      <!-- Compartir link (copiar) -->
+      <button id="copyLinkBtn" class="border border-white/20 hover:bg-white/10 w-auto px-3 h-10 rounded-full transition flex items-center gap-2"
+              title="Copiar enlace">
+        <i class="fas fa-link"></i>
+        <span class="text-sm">Compartir link</span>
+      </button>
+    </div>
+  </div>
+
+  <a href="blog.html" class="bg-gradient-to-r from-purple-600 to-cyan-500 px-6 py-3 rounded-full font-bold hover:opacity-90 transition">
+    <i class="fas fa-arrow-left mr-2"></i> Ver más artículos
+  </a>
+</div>
+
+<script>
+  (function () {
+    // Si querés forzar una URL/título específicos, setealos acá:
+    const fixedUrl   = null; // ej: "https://san-data.vercel.app/portfolio.html"
+    const fixedTitle = null; // ej: "Portfolio de Sandra Ortellado"
+
+    const url   = encodeURIComponent(fixedUrl  || window.location.href);
+    const title = encodeURIComponent(fixedTitle|| document.title);
+
+    // Enlaces de share
+    const li = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+    const tw = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+    const wa = `https://api.whatsapp.com/send?text=${title}%20${url}`;
+    const fb = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+    const em = `mailto:?subject=${title}&body=${title}%0A${url}`;
+
+    // Asignar
+    document.getElementById('shareLinkedIn').href = li;
+    document.getElementById('shareTwitter').href  = tw;
+    document.getElementById('shareWhatsApp').href = wa;
+    document.getElementById('shareFacebook').href = fb;
+    document.getElementById('shareEmail').href    = em;
+
+    // Copiar link con feedback visual
+    const copyBtn = document.getElementById('copyLinkBtn');
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(fixedUrl || window.location.href);
+        copyBtn.style.boxShadow = '0 0 0 2px var(--color-cyan)';
+        copyBtn.querySelector('span').textContent = 'Copiado';
+        setTimeout(() => {
+          copyBtn.style.boxShadow = 'none';
+          copyBtn.querySelector('span').textContent = 'Compartir link';
+        }, 1200);
+      } catch (e) {
+        alert('No se pudo copiar el enlace.');
+      }
+    });
+  })();
+</script>
+
     </div>
 
   </main>
